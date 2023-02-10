@@ -1,0 +1,427 @@
+<div class="p-grid">
+    <div class="p-col-12">
+        <p-toast></p-toast>
+        <div class="card">
+            <p-toolbar styleClass="p-mb-4">
+                <ng-template pTemplate="left">
+                    <button (click)="openCreateChercheur('chercheur')" class="p-button-success p-mr-2 p-mb-2" icon="pi pi-plus" label="New" pButton
+                            pRipple></button>
+
+
+                    <button (click)="this.findByCriteriaShow = !this.findByCriteriaShow" class="p-button-success p-mr-2 p-mb-2" icon="pi pi-{{findByCriteriaShow?'angle-down':'angle-right'}}"
+                            label="Search"
+                            pButton
+                            pRipple></button>
+                </ng-template>
+                <ng-template pTemplate="right">
+                    <div class="flex">
+                        <p-splitButton [model]="excelPdfButons" icon="pi pi-download" label="Exporter"
+                                       styleClass="p-button-help"></p-splitButton>
+                    </div>
+                </ng-template>
+
+            </p-toolbar>
+            <p-toolbar *ngIf="findByCriteriaShow">
+
+                <div class="align-form-search">
+                                <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchChercheur.numeroMatricule" class="p-mr-2" id="1"
+                                           pInputText type="text">
+                                    <label for="1">Numero matricule</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <p-dropdown [(ngModel)]="searchChercheur.credentialsNonExpired" [filter]="false"
+                                                [options]="yesOrNoCredentialsNonExpired"
+                                                [showClear]="true" id="3"
+                                                optionLabel="label"
+                                                optionValue="value" placeholder="Credentials non expired">
+                                    </p-dropdown>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <p-dropdown [(ngModel)]="searchChercheur.enabled" [filter]="false" [options]="yesOrNoEnabled"
+                                                [showClear]="true" id="4" optionLabel="label"
+                                                optionValue="value" placeholder="Enabled">
+                                    </p-dropdown>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <p-dropdown [(ngModel)]="searchChercheur.accountNonExpired" [filter]="false"
+                                                [options]="yesOrNoAccountNonExpired"
+                                                [showClear]="true" id="5" optionLabel="label"
+                                                optionValue="value" placeholder="Account non expired">
+                                    </p-dropdown>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <p-dropdown [(ngModel)]="searchChercheur.accountNonLocked" [filter]="false"
+                                                [options]="yesOrNoAccountNonLocked"
+                                                [showClear]="true" id="6" optionLabel="label"
+                                                optionValue="value" placeholder="Account non locked">
+                                    </p-dropdown>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <p-dropdown [(ngModel)]="searchChercheur.passwordChanged" [filter]="false"
+                                                [options]="yesOrNoPasswordChanged"
+                                                [showClear]="true" id="7" optionLabel="label"
+                                                optionValue="value" placeholder="Password changed">
+                                    </p-dropdown>
+                                </span>
+
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                            <p-calendar
+                                    [(ngModel)]="searchChercheur.createdAtMin" class="p-mr-2"
+                                    dateFormat="dd-MM-yy"
+                                    id="8-1"></p-calendar>
+                            <label for="8-1">Created at Min</label>
+                        </span>
+
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                            <p-calendar
+                                    [(ngModel)]="searchChercheur.createdAtMax" class="p-mr-2"
+                                    dateFormat="dd-MM-yy"
+                                    id="8-2"></p-calendar>
+                            <label for="8-2">Created at Max</label>
+                        </span>
+
+
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                            <p-calendar
+                                    [(ngModel)]="searchChercheur.updatedAtMin" class="p-mr-2"
+                                    dateFormat="dd-MM-yy"
+                                    id="9-1"></p-calendar>
+                            <label for="9-1">Updated at Min</label>
+                        </span>
+
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                            <p-calendar
+                                    [(ngModel)]="searchChercheur.updatedAtMax" class="p-mr-2"
+                                    dateFormat="dd-MM-yy"
+                                    id="9-2"></p-calendar>
+                            <label for="9-2">Updated at Max</label>
+                        </span>
+
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchChercheur.username" class="p-mr-2" id="10"
+                                           pInputText type="text">
+                                    <label for="10">Username</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchChercheur.password" class="p-mr-2" id="11"
+                                           pInputText type="text">
+                                    <label for="11">Password</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchChercheur.prenom" class="p-mr-2" id="12"
+                                           pInputText type="text">
+                                    <label for="12">Prenom</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchChercheur.nom" class="p-mr-2" id="13"
+                                           pInputText type="text">
+                                    <label for="13">Nom</label>
+                                </span>
+                </div>
+
+                <div class="align-search-button">
+                    <button (click)="searchRequest()" class="p-button-info p-mr-2" icon="pi pi-sort-amount-down" label="Validate"
+                            pButton pRipple></button>
+                </div>
+            </p-toolbar>
+
+
+            <p-table #dt [(selection)]="selectedChercheur" [columns]="cols" [globalFilterFields]="['numeroMatricule', 'role', 'credentialsNonExpired', 'enabled', 'accountNonExpired', 'accountNonLocked', 'passwordChanged', 'createdAt', 'updatedAt', 'username', 'password', 'prenom', 'nom']" [paginator]="true"
+                     [rowHover]="true"
+                     [rowsPerPageOptions]="[8,25,50]"
+                     [rows]="8" [showCurrentPageReport]="true" [value]="chercheurs"
+                     currentPageReportTemplate="Les éléments de {first} à {last} sur {totalRecords} "
+                     dataKey="id" styleClass="p-datatable-customers">
+                <ng-template pTemplate="caption">
+                    <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                        <h5 class="p-m-0">List of chercheurs</h5>
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-search"></i>
+                            <input (input)="dt.filterGlobal($event.target.value, 'contains')" pInputText placeholder="Search..."
+                                   type="text"/>
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 3rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+
+
+                        <th pSortableColumn="numeroMatricule">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Numero matricule</span>
+                                <p-sortIcon field="numeroMatricule"></p-sortIcon>
+                                <p-columnFilter class="ml-auto" display="menu" field="chercheur.numeroMatricule"
+                                                type="text"></p-columnFilter>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="role">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Role</span>
+                                <p-sortIcon field="role"></p-sortIcon>
+                                <p-columnFilter class="ml-auto" display="menu" field="chercheur.role"
+                                                type="text"></p-columnFilter>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="credentialsNonExpired">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Credentials non expired</span>
+                                <p-sortIcon field="credentialsNonExpired"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="enabled">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Enabled</span>
+                                <p-sortIcon field="enabled"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="accountNonExpired">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Account non expired</span>
+                                <p-sortIcon field="accountNonExpired"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="accountNonLocked">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Account non locked</span>
+                                <p-sortIcon field="accountNonLocked"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="passwordChanged">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Password changed</span>
+                                <p-sortIcon field="passwordChanged"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="createdAt">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Created at</span>
+                                <p-sortIcon field="createdAt"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="updatedAt">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Updated at</span>
+                                <p-sortIcon field="updatedAt"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <!--
+                        <th pSortableColumn="username">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Username</span>
+                                <p-sortIcon field="username"></p-sortIcon>
+                                <p-columnFilter type="text" field="chercheur.username" display="menu" class="ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                        -->
+
+
+                        <!--
+                        <th pSortableColumn="password">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Password</span>
+                                <p-sortIcon field="password"></p-sortIcon>
+                                <p-columnFilter type="text" field="chercheur.password" display="menu" class="ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                        -->
+
+
+                        <!--
+                        <th pSortableColumn="prenom">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Prenom</span>
+                                <p-sortIcon field="prenom"></p-sortIcon>
+                                <p-columnFilter type="text" field="chercheur.prenom" display="menu" class="ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                        -->
+
+
+                        <!--
+                        <th pSortableColumn="nom">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Nom</span>
+                                <p-sortIcon field="nom"></p-sortIcon>
+                                <p-columnFilter type="text" field="chercheur.nom" display="menu" class="ml-auto"></p-columnFilter>
+                            </div>
+                        </th>
+                        -->
+
+
+                        <th>Actions</th>
+                    </tr>
+                </ng-template>
+                <ng-template let-chercheur pTemplate="body">
+                    <tr>
+                        <td>
+                            <p-tableCheckbox [value]="chercheur"></p-tableCheckbox>
+                        </td>
+<<<<<<< HEAD
+
+                        <td>{{chercheur.numeroMatricule}}</td>
+
+
+                        <td><i *ngIf="chercheur.credentialsNonExpired" class="pi pi-check checked-toogle"></i>
+                            <i *ngIf="!chercheur.credentialsNonExpired" class="pi pi-times unchecked-toogle"></i>
+                        </td>
+
+
+                        <td><i *ngIf="chercheur.enabled" class="pi pi-check checked-toogle"></i>
+                            <i *ngIf="!chercheur.enabled" class="pi pi-times unchecked-toogle"></i>
+                        </td>
+
+
+                        <td><i *ngIf="chercheur.accountNonExpired" class="pi pi-check checked-toogle"></i>
+                            <i *ngIf="!chercheur.accountNonExpired" class="pi pi-times unchecked-toogle"></i>
+                        </td>
+
+
+                        <td><i *ngIf="chercheur.accountNonLocked" class="pi pi-check checked-toogle"></i>
+                            <i *ngIf="!chercheur.accountNonLocked" class="pi pi-times unchecked-toogle"></i>
+                        </td>
+
+
+                        <td><i *ngIf="chercheur.passwordChanged" class="pi pi-check checked-toogle"></i>
+                            <i *ngIf="!chercheur.passwordChanged" class="pi pi-times unchecked-toogle"></i>
+                        </td>
+
+
+                        <td>{{chercheur.createdAt | date :'dd/MM/yyyy HH:mm' }}</td>
+
+
+                        <!--
+                           <td>{{chercheur.updatedAt | date :'dd/MM/yyyy HH:mm' }}</td>
+                        -->
+
+                        <!--
+                            <td>{{chercheur.username}}</td>
+                        -->
+
+                        <!--
+                            <td>{{chercheur.password}}</td>
+                        -->
+
+                        <!--
+                            <td>{{chercheur.prenom}}</td>
+                        -->
+
+                        <!--
+                            <td>{{chercheur.nom}}</td>
+                        -->
+=======
+                            
+                                 <td>{{chercheur.numeroMatricule}}</td>
+                            
+
+                            
+                            
+
+                            
+                                <td><i *ngIf="chercheur.credentialsNonExpired" class="pi pi-check checked-toogle"></i>
+                                    <i *ngIf="!chercheur.credentialsNonExpired" class="pi pi-times unchecked-toogle"></i>
+                                </td>
+                            
+
+                            
+                                <td><i *ngIf="chercheur.enabled" class="pi pi-check checked-toogle"></i>
+                                    <i *ngIf="!chercheur.enabled" class="pi pi-times unchecked-toogle"></i>
+                                </td>
+                            
+
+                            
+                                <td><i *ngIf="chercheur.accountNonExpired" class="pi pi-check checked-toogle"></i>
+                                    <i *ngIf="!chercheur.accountNonExpired" class="pi pi-times unchecked-toogle"></i>
+                                </td>
+                            
+
+                            
+                                <td><i *ngIf="chercheur.accountNonLocked" class="pi pi-check checked-toogle"></i>
+                                    <i *ngIf="!chercheur.accountNonLocked" class="pi pi-times unchecked-toogle"></i>
+                                </td>
+                            
+
+                            
+                                <td><i *ngIf="chercheur.passwordChanged" class="pi pi-check checked-toogle"></i>
+                                    <i *ngIf="!chercheur.passwordChanged" class="pi pi-times unchecked-toogle"></i>
+                                </td>
+                            
+
+                            
+                                <td>{{chercheur.createdAt | date :'dd/MM/yyyy HH:mm' }}</td>
+                            
+
+
+                                <td>{{chercheur.updatedAt | date :'dd/MM/yyyy HH:mm' }}</td>
+
+
+
+                                 <td>{{chercheur.username}}</td>
+
+
+                             <!-- 
+                                 <td>{{chercheur.password}}</td>
+                             --> 
+
+                             <!-- 
+                                 <td>{{chercheur.prenom}}</td>
+                             --> 
+
+                             <!-- 
+                                 <td>{{chercheur.nom}}</td>
+                             --> 
+>>>>>>> 4e0ea702a2c3d82b8c41f8cd4b2df2565fff229b
+
+
+                        <td>
+                            <button (click)="editChercheur(chercheur)" class="p-button-rounded p-button-success p-mr-2" icon="pi pi-pencil"
+                                    pButton
+                                    pRipple></button>
+                            <button (click)="viewChercheur(chercheur)" class="p-button-rounded p-button-info p-mr-2" icon="pi pi-list" pButton
+                                    pRipple></button>
+                            <button (click)="deleteChercheur(chercheur)" class="p-button-rounded p-button-danger p-mr-2" icon="pi pi-trash" pButton
+                                    pRipple></button>
+
+                            <button (click)="duplicateChercheur(chercheur)" class="p-button-rounded p-button-raised p-button-warning" icon="pi pi-copy"
+                                    pButton
+                                    pRipple></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="summary">
+                    <div class="p-d-flex p-ai-center p-jc-between">
+                        En totale
+                        il {{chercheurs ? chercheurs.length == 1 ? 'y a' : 'y a' : 'y a' }} {{chercheurs ? chercheurs.length : 0 }} {{chercheurs ? chercheurs.length == 1 ? 'chercheur' : 'chercheurs' : 0 }}
+                        .
+                    </div>
+                </ng-template>
+            </p-table>
+        </div>
+
+        <app-chercheur-create-admin></app-chercheur-create-admin>
+        <app-chercheur-edit-admin></app-chercheur-edit-admin>
+        <app-chercheur-view-admin></app-chercheur-view-admin>
+        <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+    </div>
+</div>

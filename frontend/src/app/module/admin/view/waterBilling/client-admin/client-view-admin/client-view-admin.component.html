@@ -1,0 +1,82 @@
+<p-dialog [(visible)]="viewClientDialog" [modal]="true"
+          [style]="{width: '70vw'}" header=""
+          styleClass="p-fluid">
+
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="">
+                <div class="p-grid">
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="1">User Name</label>
+                        <input [(ngModel)]="selectedClient.userName" [disabled]="true" autofocus
+                               class="p-mb-2 p-mr-2" id="1"
+                               pInputText placeholder="User Name"
+                               type="text">
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="2">Cni</label>
+                        <input [(ngModel)]="selectedClient.cni" [disabled]="true" autofocus
+                               class="p-mb-2 p-mr-2" id="2"
+                               pInputText placeholder="Cni"
+                               type="text">
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="3">Address</label>
+                        <input [(ngModel)]="selectedClient.address" [disabled]="true" autofocus
+                               class="p-mb-2 p-mr-2" id="3"
+                               pInputText placeholder="Address"
+                               type="text">
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="5">Phone</label>
+                        <input [(ngModel)]="selectedClient.phone" [disabled]="true" autofocus
+                               class="p-mb-2 p-mr-2" id="5"
+                               pInputText placeholder="Phone"
+                               type="text">
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="6">Counter Number</label>
+                        <input [(ngModel)]="selectedClient.counterNumber" [disabled]="true" autofocus
+                               class="p-mb-2 p-mr-2" id="6"
+                               pInputText placeholder="Counter Number"
+                               type="text">
+                    </div>
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="13">Record Date</label>
+                        <p-calendar [(ngModel)]="selectedClient.recordDate" [disabled]="true" [showSeconds]="false" [showTime]="true"
+                                    dateFormat="{{dateFormat}}" id="13"
+                                    placeholder="Record Date"></p-calendar>
+                    </div>
+
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <div class="p-grid">
+            <div>
+                <button (click)="hideViewDialog()" class="p-button-text" icon="pi pi-times" label="Cancel"
+                        pButton pRipple></button>
+            </div>
+        </div>
+    </ng-template>
+
+
+
+</p-dialog>
+
+
+

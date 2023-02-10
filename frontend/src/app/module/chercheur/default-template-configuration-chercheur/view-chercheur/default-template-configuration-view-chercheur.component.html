@@ -1,0 +1,216 @@
+<p-dialog [(visible)]="viewDefaultTemplateConfigurationDialog" [modal]="true"
+          [style]="{width: '70vw'}" header=""
+          styleClass="p-fluid">
+
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="">
+                <div class="p-grid">
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="1">Email kosc</label>
+                        <input [(ngModel)]="selectedDefaultTemplateConfiguration.emailKosc" [(ngModel)]="selectedDefaultTemplateConfiguration.emailKosc" [disabled]="true" autofocus
+                               class="p-mb-2 p-mr-2" id="1"
+                               pInputText placeholder="Email kosc"
+                               type="text">
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="2">Email maneo</label>
+                        <input [(ngModel)]="selectedDefaultTemplateConfiguration.emailManeo" [(ngModel)]="selectedDefaultTemplateConfiguration.emailManeo" [disabled]="true" autofocus
+                               class="p-mb-2 p-mr-2" id="2"
+                               pInputText placeholder="Email maneo"
+                               type="text">
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="3">Template email ftl</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailFtlVo"
+                                    [disabled]="true"
+                                    [filter]="true" [options]="templateEmailFtls" [showClear]="true"
+                                    filterMatchMode="contains" id="3"
+                                    optionLabel="libelle"
+                                    placeholder="Template email ftl">
+                        </p-dropdown>
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="4">Template email cloture</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailClotureVo"
+                                    [disabled]="true"
+                                    [filter]="true" [options]="templateEmailClotures" [showClear]="true"
+                                    filterMatchMode="contains" id="4"
+                                    optionLabel="libelle"
+                                    placeholder="Template email cloture">
+                        </p-dropdown>
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="5">Template suivi</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateSuiviVo"
+                                    [disabled]="true"
+                                    [filter]="true" [options]="templateSuivis" [showClear]="true"
+                                    filterMatchMode="contains" id="5"
+                                    optionLabel="libelle"
+                                    placeholder="Template suivi">
+                        </p-dropdown>
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="6">Template email client injoinable</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailClientInjoinableVo"
+                                    [disabled]="true"
+                                    [filter]="true" [options]="templateEmailClientInjoinables" [showClear]="true"
+                                    filterMatchMode="contains" id="6"
+                                    optionLabel="libelle"
+                                    placeholder="Template email client injoinable">
+                        </p-dropdown>
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="7">Template email report</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailReportVo"
+                                    [disabled]="true"
+                                    [filter]="true" [options]="templateEmailReports" [showClear]="true"
+                                    filterMatchMode="contains" id="7"
+                                    optionLabel="libelle"
+                                    placeholder="Template email report">
+                        </p-dropdown>
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="8">Template email planification</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailPlanificationVo"
+                                    [disabled]="true"
+                                    [filter]="true" [options]="templateEmailPlanifications" [showClear]="true"
+                                    filterMatchMode="contains" id="8"
+                                    optionLabel="libelle"
+                                    placeholder="Template email planification">
+                        </p-dropdown>
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="9">Template email replanification</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailReplanificationVo"
+                                    [disabled]="true"
+                                    [filter]="true" [options]="templateEmailReplanifications" [showClear]="true"
+                                    filterMatchMode="contains" id="9"
+                                    optionLabel="libelle"
+                                    placeholder="Template email replanification">
+                        </p-dropdown>
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="10">Template email refus</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailRefusVo"
+                                    [disabled]="true"
+                                    [filter]="true" [options]="templateEmailRefuss" [showClear]="true"
+                                    filterMatchMode="contains" id="10"
+                                    optionLabel="libelle"
+                                    placeholder="Template email refus">
+                        </p-dropdown>
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="11">Template email client injoinable kosc</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailClientInjoinableKoscVo"
+                                    [disabled]="true"
+                                    [filter]="true" [options]="templateEmailClientInjoinableKoscs" [showClear]="true"
+                                    filterMatchMode="contains" id="11"
+                                    optionLabel="libelle"
+                                    placeholder="Template email client injoinable kosc">
+                        </p-dropdown>
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="12">Template email confirmation client</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailConfirmationClientVo"
+                                    [disabled]="true"
+                                    [filter]="true" [options]="templateEmailConfirmationClients" [showClear]="true"
+                                    filterMatchMode="contains" id="12"
+                                    optionLabel="libelle"
+                                    placeholder="Template email confirmation client">
+                        </p-dropdown>
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="13">Template email mauvais contact</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailMauvaisContactVo"
+                                    [disabled]="true"
+                                    [filter]="true" [options]="templateEmailMauvaisContacts" [showClear]="true"
+                                    filterMatchMode="contains" id="13"
+                                    optionLabel="libelle"
+                                    placeholder="Template email mauvais contact">
+                        </p-dropdown>
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="14">Template email cri</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailCriVo"
+                                    [disabled]="true"
+                                    [filter]="true" [options]="templateEmailCris" [showClear]="true"
+                                    filterMatchMode="contains" id="14"
+                                    optionLabel="libelle"
+                                    placeholder="Template email cri">
+                        </p-dropdown>
+                    </div>
+
+
+                    <div class="p-field align-inputswitch p-col-12  p-md-3">
+                        <div class="label-inputswitch">
+                            <label for="15">Enabled</label>
+                        </div>
+                        <div class="input-switch">
+                            <p-inputSwitch [(ngModel)]="selectedDefaultTemplateConfiguration.enabled" [disabled]="true"
+                                           id="15"></p-inputSwitch>
+                        </div>
+                    </div>
+
+
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <div class="p-grid">
+            <div>
+                <button (click)="hideViewDialog()" class="p-button-text" icon="pi pi-times" label="Cancel"
+                        pButton pRipple></button>
+            </div>
+        </div>
+    </ng-template>
+
+    <app-template-email-ftl-create-chercheur></app-template-email-ftl-create-chercheur>
+    <app-template-email-cloture-create-chercheur></app-template-email-cloture-create-chercheur>
+    <app-template-suivi-create-chercheur></app-template-suivi-create-chercheur>
+    <app-template-email-client-injoinable-create-chercheur></app-template-email-client-injoinable-create-chercheur>
+    <app-template-email-report-create-chercheur></app-template-email-report-create-chercheur>
+    <app-template-email-planification-create-chercheur></app-template-email-planification-create-chercheur>
+    <app-template-email-replanification-create-chercheur></app-template-email-replanification-create-chercheur>
+    <app-template-email-refus-create-chercheur></app-template-email-refus-create-chercheur>
+    <app-template-email-client-injoinable-kosc-create-chercheur></app-template-email-client-injoinable-kosc-create-chercheur>
+    <app-template-email-confirmation-client-create-chercheur></app-template-email-confirmation-client-create-chercheur>
+    <app-template-email-mauvais-contact-create-chercheur></app-template-email-mauvais-contact-create-chercheur>
+    <app-template-email-cri-create-chercheur></app-template-email-cri-create-chercheur>
+
+
+</p-dialog>
+
+
+

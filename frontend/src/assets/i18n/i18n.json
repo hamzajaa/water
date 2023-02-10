@@ -1,0 +1,862 @@
+{
+  new: 'New',
+  search: 'Search',
+  export: 'Exporter',
+  validate: 'Validate',
+  from-to: 'Les éléments de {first} à {last} sur {totalRecords}',
+  search: 'Search...',
+  Cause
+  ko
+  ok: 'Cause ko ok',
+  Liste
+  des
+  cause
+  ko
+  oks: 'Liste des cause ko oks',
+  Code: 'Code',
+  Libelle: 'Libelle',
+  Template
+  email
+  ftl: 'Template email ftl',
+  Liste
+  des
+  template
+  email
+  ftls: 'Liste des template email ftls',
+  Libelle: 'Libelle',
+  Objet: 'Objet',
+  Corps: 'Corps',
+  Etat
+  demande
+  kosc: 'Etat demande kosc',
+  Liste
+  des
+  etat
+  demande
+  koscs: 'Liste des etat demande koscs',
+  Code: 'Code',
+  Libelle: 'Libelle',
+  Template
+  email
+  mauvais
+  contact: 'Template email mauvais contact',
+  Liste
+  des
+  template
+  email
+  mauvais
+  contacts: 'Liste des template email mauvais contacts',
+  Libelle: 'Libelle',
+  Objet: 'Objet',
+  Corps: 'Corps',
+  Chercheur: 'Chercheur',
+  Liste
+  des
+  chercheurs: 'Liste des chercheurs',
+  Numero
+  matricule: 'Numero matricule',
+  Role: 'Role',
+  Credentials
+  non
+  expired: 'Credentials non expired',
+  Enabled: 'Enabled',
+  Account
+  non
+  expired: 'Account non expired',
+  Account
+  non
+  locked: 'Account non locked',
+  Password
+  changed: 'Password changed',
+  Created
+  at: 'Created at',
+  Updated
+  at: 'Updated at',
+  Username: 'Username',
+  Password: 'Password',
+  Prenom: 'Prenom',
+  Nom: 'Nom',
+  Template
+  email
+  refus: 'Template email refus',
+  Liste
+  des
+  template
+  email
+  refus: 'Liste des template email refus',
+  Libelle: 'Libelle',
+  Objet: 'Objet',
+  Corps: 'Corps',
+  Technicien: 'Technicien',
+  Liste
+  des
+  techniciens: 'Liste des techniciens',
+  Cell
+  phone: 'Cell phone',
+  Email: 'Email',
+  Email
+  attachement: 'Email attachement',
+  Entreprise: 'Entreprise',
+  Identifiant: 'Identifiant',
+  Mot
+  passe: 'Mot passe',
+  Adresse
+  ont: 'Adresse ont',
+  Credentials
+  non
+  expired: 'Credentials non expired',
+  Enabled: 'Enabled',
+  Account
+  non
+  expired: 'Account non expired',
+  Account
+  non
+  locked: 'Account non locked',
+  Password
+  changed: 'Password changed',
+  Created
+  at: 'Created at',
+  Updated
+  at: 'Updated at',
+  Username: 'Username',
+  Password: 'Password',
+  Prenom: 'Prenom',
+  Nom: 'Nom',
+  Source
+  replanification: 'Source replanification',
+  Liste
+  des
+  source
+  replanifications: 'Liste des source replanifications',
+  Code: 'Code',
+  Libelle: 'Libelle',
+  Template
+  email
+  confirmation
+  client: 'Template email confirmation client',
+  Liste
+  des
+  template
+  email
+  confirmation
+  clients: 'Liste des template email confirmation clients',
+  Libelle: 'Libelle',
+  Objet: 'Objet',
+  Corps: 'Corps',
+  Template
+  email
+  replanification: 'Template email replanification',
+  Liste
+  des
+  template
+  email
+  replanifications: 'Liste des template email replanifications',
+  Libelle: 'Libelle',
+  Objet: 'Objet',
+  Corps: 'Corps',
+  Template
+  email
+  cloture: 'Template email cloture',
+  Liste
+  des
+  template
+  email
+  clotures: 'Liste des template email clotures',
+  Libelle: 'Libelle',
+  Objet: 'Objet',
+  Corps: 'Corps',
+  Template
+  email
+  client
+  injoinable
+  kosc: 'Template email client injoinable kosc',
+  Liste
+  des
+  template
+  email
+  client
+  injoinable
+  koscs: 'Liste des template email client injoinable koscs',
+  Libelle: 'Libelle',
+  Objet: 'Objet',
+  Corps: 'Corps',
+  Template
+  email
+  planification: 'Template email planification',
+  Liste
+  des
+  template
+  email
+  planifications: 'Liste des template email planifications',
+  Libelle: 'Libelle',
+  Objet: 'Objet',
+  Corps: 'Corps',
+  Arret
+  travail: 'Arret travail',
+  Liste
+  des
+  arret
+  travails: 'Liste des arret travails',
+  Technicien: 'Technicien',
+  Date
+  debut: 'Date debut',
+  Date
+  fin: 'Date fin',
+  Raison
+  arret
+  travail: 'Raison arret travail',
+  Comment: 'Comment',
+  Departement: 'Departement',
+  Liste
+  des
+  departements: 'Liste des departements',
+  Libelle: 'Libelle',
+  Code: 'Code',
+  Region: 'Region',
+  Raison
+  arret
+  travail: 'Raison arret travail',
+  Liste
+  des
+  raison
+  arret
+  travails: 'Liste des raison arret travails',
+  Libelle: 'Libelle',
+  Code: 'Code',
+  Template
+  email
+  report: 'Template email report',
+  Liste
+  des
+  template
+  email
+  reports: 'Liste des template email reports',
+  Libelle: 'Libelle',
+  Objet: 'Objet',
+  Corps: 'Corps',
+  Template
+  suivi: 'Template suivi',
+  Liste
+  des
+  template
+  suivis: 'Liste des template suivis',
+  Libelle: 'Libelle',
+  Objet: 'Objet',
+  Corps: 'Corps',
+  Departement
+  technicien: 'Departement technicien',
+  Liste
+  des
+  departement
+  techniciens: 'Liste des departement techniciens',
+  Technicien: 'Technicien',
+  Departement: 'Departement',
+  Date
+  debut: 'Date debut',
+  Date
+  fin: 'Date fin',
+  Template
+  email
+  client
+  injoinable: 'Template email client injoinable',
+  Liste
+  des
+  template
+  email
+  client
+  injoinables: 'Liste des template email client injoinables',
+  Libelle: 'Libelle',
+  Objet: 'Objet',
+  Corps: 'Corps',
+  Region: 'Region',
+  Liste
+  des
+  regions: 'Liste des regions',
+  Libelle: 'Libelle',
+  Code: 'Code',
+  Operator: 'Operator',
+  Liste
+  des
+  operators: 'Liste des operators',
+  Reference: 'Reference',
+  Libelle: 'Libelle',
+  Template
+  email
+  cri: 'Template email cri',
+  Liste
+  des
+  template
+  email
+  cris: 'Liste des template email cris',
+  Libelle: 'Libelle',
+  Objet: 'Objet',
+  Corps: 'Corps',
+  Entreprise: 'Entreprise',
+  Liste
+  des
+  entreprises: 'Liste des entreprises',
+  Libelle: 'Libelle',
+  Code: 'Code',
+  Ordre
+  kosc: 'Ordre kosc',
+  Liste
+  des
+  ordre
+  koscs: 'Liste des ordre koscs',
+  Reference: 'Reference',
+  Reference
+  work
+  order: 'Reference work order',
+  Code
+  decharge: 'Code decharge',
+  Supplier
+  service
+  code: 'Supplier service code',
+  Date
+  debut
+  traitement: 'Date debut traitement',
+  End
+  custumor
+  name: 'End custumor name',
+  End
+  custumor
+  siret: 'End custumor siret',
+  End
+  custumor
+  first
+  name: 'End custumor first name',
+  End
+  custumor
+  last
+  name: 'End custumor last name',
+  End
+  custumor
+  zipcode: 'End custumor zipcode',
+  End
+  custumor
+  street
+  name: 'End custumor street name',
+  End
+  custumor
+  street
+  number: 'End custumor street number',
+  End
+  custumor
+  city: 'End custumor city',
+  End
+  custumor
+  building: 'End custumor building',
+  End
+  custumor
+  stairs: 'End custumor stairs',
+  End
+  custumor
+  floor: 'End custumor floor',
+  End
+  custumor
+  contact
+  first
+  name: 'End custumor contact first name',
+  End
+  custumor
+  contact
+  last
+  name: 'End custumor contact last name',
+  End
+  custumor
+  contact
+  phone: 'End custumor contact phone',
+  End
+  custumor
+  contact
+  cell
+  phone: 'End custumor contact cell phone',
+  End
+  custumor
+  contact
+  email: 'End custumor contact email',
+  Operator: 'Operator',
+  Company: 'Company',
+  Referen
+  dossier: 'Referen dossier',
+  Submission
+  date: 'Submission date',
+  Coordonne
+  pbo
+  y: 'Coordonne pbo y',
+  Hauteur
+  pbo: 'Hauteur pbo',
+  Type
+  materiel
+  pbo: 'Type materiel pbo',
+  Type
+  pbo: 'Type pbo',
+  Condition
+  syndics: 'Condition syndics',
+  Type
+  racordement
+  pbo
+  pto: 'Type racordement pbo pto',
+  Autre
+  infos
+  pbo
+  pto: 'Autre infos pbo pto',
+  Code
+  acces
+  immeuble: 'Code acces immeuble',
+  Contacte
+  immeuble: 'Contacte immeuble',
+  Pma
+  accessible: 'Pma accessible',
+  Info
+  obtention
+  cle: 'Info obtention cle',
+  Locale
+  ipm: 'Locale ipm',
+  Contacts
+  syndic: 'Contacts syndic',
+  Racordement
+  long: 'Racordement long',
+  Oc1: 'Oc1',
+  Nom
+  module
+  pm1: 'Nom module pm1',
+  Position
+  module
+  pm1: 'Position module pm1',
+  Reference
+  cable
+  module
+  pm1: 'Reference cable module pm1',
+  Reference
+  tube
+  module
+  pm1: 'Reference tube module pm1',
+  Information
+  fibre
+  module
+  pm1: 'Information fibre module pm1',
+  Reference
+  cable
+  pbo1: 'Reference cable pbo1',
+  Information
+  tube
+  pbo1: 'Information tube pbo1',
+  Information
+  fibre
+  pbo1: 'Information fibre pbo1',
+  Connecteur
+  prise
+  numero1: 'Connecteur prise numero1',
+  Connecteur
+  prise
+  couleur1: 'Connecteur prise couleur1',
+  Reserve1: 'Reserve1',
+  Oc2: 'Oc2',
+  Nom
+  module
+  pm2: 'Nom module pm2',
+  Position
+  module
+  pm2: 'Position module pm2',
+  Reference
+  cable
+  module
+  pm2: 'Reference cable module pm2',
+  Reference
+  tube
+  module
+  pm2: 'Reference tube module pm2',
+  Information
+  fibre
+  module
+  pm2: 'Information fibre module pm2',
+  Reference
+  cable
+  pbo2: 'Reference cable pbo2',
+  Information
+  tube
+  pbo2: 'Information tube pbo2',
+  Information
+  fibre
+  pbo2: 'Information fibre pbo2',
+  Connecteur
+  prise
+  numero2: 'Connecteur prise numero2',
+  Connecteur
+  prise
+  couleur2: 'Connecteur prise couleur2',
+  Reserve2: 'Reserve2',
+  Oc3: 'Oc3',
+  Nom
+  module
+  pm3: 'Nom module pm3',
+  Position
+  module
+  pm3: 'Position module pm3',
+  Reference
+  cable
+  module
+  pm3: 'Reference cable module pm3',
+  Reference
+  tube
+  module
+  pm3: 'Reference tube module pm3',
+  Information
+  fibre
+  module
+  pm3: 'Information fibre module pm3',
+  Reference
+  cable
+  pbo3: 'Reference cable pbo3',
+  Information
+  tube
+  pbo3: 'Information tube pbo3',
+  Information
+  fibre
+  pbo3: 'Information fibre pbo3',
+  Connecteur
+  prise
+  numero3: 'Connecteur prise numero3',
+  Connecteur
+  prise
+  couleur3: 'Connecteur prise couleur3',
+  Reserve3: 'Reserve3',
+  Oc4: 'Oc4',
+  Nom
+  module
+  pm4: 'Nom module pm4',
+  Position
+  module
+  pm4: 'Position module pm4',
+  Reference
+  cable
+  module
+  pm4: 'Reference cable module pm4',
+  Reference
+  tube
+  module
+  pm4: 'Reference tube module pm4',
+  Information
+  fibre
+  module
+  pm4: 'Information fibre module pm4',
+  Reference
+  cable
+  pbo4: 'Reference cable pbo4',
+  Information
+  tube
+  pbo4: 'Information tube pbo4',
+  Information
+  fibre
+  pbo4: 'Information fibre pbo4',
+  Connecteur
+  prise
+  numero4: 'Connecteur prise numero4',
+  Connecteur
+  prise
+  couleur4: 'Connecteur prise couleur4',
+  Reserve4: 'Reserve4',
+  Departement: 'Departement',
+  Technicien: 'Technicien',
+  Pbo
+  reel: 'Pbo reel',
+  Numero
+  serie
+  ont: 'Numero serie ont',
+  Hotline: 'Hotline',
+  Mutation
+  pbo: 'Mutation pbo',
+  Work
+  order
+  type: 'Work order type',
+  Product: 'Product',
+  Provider: 'Provider',
+  Provider
+  file
+  type: 'Provider file type',
+  Spliter: 'Spliter',
+  Existing
+  otp: 'Existing otp',
+  Profile: 'Profile',
+  Provider
+  sl
+  id: 'Provider sl id',
+  Reference
+  prestation
+  prise: 'Reference prestation prise',
+  Reference
+  pm: 'Reference pm',
+  Reference
+  pm
+  technique: 'Reference pm technique',
+  Localisation
+  pm: 'Localisation pm',
+  Provider
+  product: 'Provider product',
+  Reference
+  pbo: 'Reference pbo',
+  Localisation
+  pbo: 'Localisation pbo',
+  Reference
+  prise: 'Reference prise',
+  Date
+  premier
+  appel: 'Date premier appel',
+  Date
+  deuxieme
+  appel: 'Date deuxieme appel',
+  Date
+  troisieme
+  appel: 'Date troisieme appel',
+  Date
+  prise
+  rdv: 'Date prise rdv',
+  Date
+  rdv: 'Date rdv',
+  Date
+  ouverture: 'Date ouverture',
+  Commentaire
+  client: 'Commentaire client',
+  Commentaire
+  kosc: 'Commentaire kosc',
+  Template
+  email
+  planification: 'Template email planification',
+  Objet
+  planification: 'Objet planification',
+  Corps
+  planification: 'Corps planification',
+  Envoye
+  planification: 'Envoye planification',
+  Date
+  envoi
+  planification: 'Date envoi planification',
+  From
+  planification: 'From planification',
+  To
+  planification: 'To planification',
+  Date
+  appel
+  replanification: 'Date appel replanification',
+  Template
+  email
+  report: 'Template email report',
+  Objet
+  report: 'Objet report',
+  Corps
+  report: 'Corps report',
+  Envoye
+  report: 'Envoye report',
+  Date
+  envoi
+  report: 'Date envoi report',
+  Template
+  email
+  replanification: 'Template email replanification',
+  Objet
+  replanification: 'Objet replanification',
+  Corps
+  replanification: 'Corps replanification',
+  Envoye
+  replanification: 'Envoye replanification',
+  Date
+  envoi
+  replanification: 'Date envoi replanification',
+  Template
+  email
+  refus: 'Template email refus',
+  Objet
+  refus: 'Objet refus',
+  Corps
+  refus: 'Corps refus',
+  From
+  refus: 'From refus',
+  To
+  refus: 'To refus',
+  Envoye
+  refus: 'Envoye refus',
+  Date
+  envoi
+  refus: 'Date envoi refus',
+  Template
+  email
+  mauvais
+  contact: 'Template email mauvais contact',
+  Objet
+  mauvais
+  contact: 'Objet mauvais contact',
+  Corps
+  mauvais
+  contact: 'Corps mauvais contact',
+  From
+  mauvais
+  contact: 'From mauvais contact',
+  To
+  mauvais
+  contact: 'To mauvais contact',
+  Envoye
+  mauvais
+  contact: 'Envoye mauvais contact',
+  Date
+  envoi
+  mauvais
+  contact: 'Date envoi mauvais contact',
+  Template
+  email
+  confirmation
+  client: 'Template email confirmation client',
+  Objet
+  confirmation
+  client: 'Objet confirmation client',
+  Corps
+  confirmation
+  client: 'Corps confirmation client',
+  From
+  confirmation
+  client: 'From confirmation client',
+  To
+  confirmation
+  client: 'To confirmation client',
+  Envoye
+  confirmation
+  client: 'Envoye confirmation client',
+  Date
+  envoi
+  confirmation
+  client: 'Date envoi confirmation client',
+  Template
+  email
+  cri: 'Template email cri',
+  Objet
+  cri: 'Objet cri',
+  Corps
+  cri: 'Corps cri',
+  From
+  cri: 'From cri',
+  To
+  cri: 'To cri',
+  Envoye
+  cri: 'Envoye cri',
+  Date
+  envoi
+  cri: 'Date envoi cri',
+  Template
+  email
+  ftl: 'Template email ftl',
+  Objet
+  ftl: 'Objet ftl',
+  Corps
+  ftl: 'Corps ftl',
+  From
+  ftl: 'From ftl',
+  To
+  ftl: 'To ftl',
+  Envoye
+  ftl: 'Envoye ftl',
+  Date
+  envoi
+  ftl: 'Date envoi ftl',
+  Date
+  intervention
+  technique
+  debut: 'Date intervention technique debut',
+  Date
+  intervention
+  technique
+  fin: 'Date intervention technique fin',
+  Template
+  email
+  client
+  injoinable: 'Template email client injoinable',
+  Objet
+  client
+  injoinable: 'Objet client injoinable',
+  Corps
+  client
+  injoinable: 'Corps client injoinable',
+  From
+  client
+  injoinable: 'From client injoinable',
+  To
+  client
+  injoinable: 'To client injoinable',
+  Envoye
+  client
+  injoinable: 'Envoye client injoinable',
+  Date
+  envoi
+  client
+  injoinable: 'Date envoi client injoinable',
+  Template
+  email
+  client
+  injoinable
+  kosc: 'Template email client injoinable kosc',
+  Objet
+  client
+  injoinable
+  kosc: 'Objet client injoinable kosc',
+  Corps
+  client
+  injoinable
+  kosc: 'Corps client injoinable kosc',
+  From
+  client
+  injoinable
+  kosc: 'From client injoinable kosc',
+  To
+  client
+  injoinable
+  kosc: 'To client injoinable kosc',
+  Envoye
+  client
+  injoinable
+  kosc: 'Envoye client injoinable kosc',
+  Date
+  envoi
+  client
+  injoinable
+  kosc: 'Date envoi client injoinable kosc',
+  Commentaire
+  technicien: 'Commentaire technicien',
+  Commantaire
+  cloture: 'Commantaire cloture',
+  Etat
+  demande
+  kosc: 'Etat demande kosc',
+  Template
+  email
+  cloture: 'Template email cloture',
+  Objet
+  cloture: 'Objet cloture',
+  Corps
+  cloture: 'Corps cloture',
+  Envoye
+  cloture: 'Envoye cloture',
+  Date
+  envoi
+  cloture: 'Date envoi cloture',
+  Email
+  cloture
+  piece
+  joints: 'Email cloture piece joints',
+  Template
+  suivi: 'Template suivi',
+  Objet
+  suivi: 'Objet suivi',
+  Corps
+  suivi: 'Corps suivi',
+  Envoye
+  suivi: 'Envoye suivi',
+  Date
+  envoi
+  suivi: 'Date envoi suivi',
+  Cause
+  ko
+  ok: 'Cause ko ok',
+  Source
+  replanification: 'Source replanification'
+}
+
+

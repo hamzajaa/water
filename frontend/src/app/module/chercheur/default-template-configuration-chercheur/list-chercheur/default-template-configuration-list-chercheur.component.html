@@ -1,0 +1,408 @@
+<div class="p-grid">
+    <div class="p-col-12">
+        <p-toast></p-toast>
+        <div class="card">
+            <p-toolbar styleClass="p-mb-4">
+                <ng-template pTemplate="left">
+                    <button (click)="openCreateDefaultTemplateConfiguration('defaultTemplateConfiguration')" class="p-button-success p-mr-2 p-mb-2" icon="pi pi-plus" label="New" pButton
+                            pRipple></button>
+
+
+                    <button (click)="this.findByCriteriaShow = !this.findByCriteriaShow" class="p-button-success p-mr-2 p-mb-2" icon="pi pi-{{findByCriteriaShow?'angle-down':'angle-right'}}"
+                            label="Search"
+                            pButton
+                            pRipple></button>
+                </ng-template>
+                <ng-template pTemplate="right">
+                    <div class="flex">
+                        <p-splitButton [model]="excelPdfButons" icon="pi pi-download" label="Exporter"
+                                       styleClass="p-button-help"></p-splitButton>
+                    </div>
+                </ng-template>
+
+            </p-toolbar>
+            <p-toolbar *ngIf="findByCriteriaShow">
+
+                <div class="align-form-search">
+                                <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchDefaultTemplateConfiguration.emailKosc" class="p-mr-2" id="1"
+                                           pInputText type="text">
+                                    <label for="1">Email kosc</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchDefaultTemplateConfiguration.emailManeo" class="p-mr-2" id="2"
+                                           pInputText type="text">
+                                    <label for="2">Email maneo</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                <p-dropdown [(ngModel)]="searchDefaultTemplateConfiguration.templateEmailFtlVo"
+                                            [filter]="true"
+                                            [options]="templateEmailFtls"
+                                            [showClear]="true" id="3" optionLabel="libelle"
+                                            placeholder="Template email ftl">
+                                </p-dropdown>
+                            </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                <p-dropdown [(ngModel)]="searchDefaultTemplateConfiguration.templateEmailClotureVo"
+                                            [filter]="true"
+                                            [options]="templateEmailClotures"
+                                            [showClear]="true" id="4" optionLabel="libelle"
+                                            placeholder="Template email cloture">
+                                </p-dropdown>
+                            </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                <p-dropdown [(ngModel)]="searchDefaultTemplateConfiguration.templateSuiviVo"
+                                            [filter]="true"
+                                            [options]="templateSuivis"
+                                            [showClear]="true" id="5" optionLabel="libelle"
+                                            placeholder="Template suivi">
+                                </p-dropdown>
+                            </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                <p-dropdown [(ngModel)]="searchDefaultTemplateConfiguration.templateEmailClientInjoinableVo"
+                                            [filter]="true"
+                                            [options]="templateEmailClientInjoinables"
+                                            [showClear]="true" id="6"
+                                            optionLabel="libelle"
+                                            placeholder="Template email client injoinable">
+                                </p-dropdown>
+                            </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                <p-dropdown [(ngModel)]="searchDefaultTemplateConfiguration.templateEmailReportVo"
+                                            [filter]="true"
+                                            [options]="templateEmailReports"
+                                            [showClear]="true" id="7" optionLabel="libelle"
+                                            placeholder="Template email report">
+                                </p-dropdown>
+                            </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                <p-dropdown [(ngModel)]="searchDefaultTemplateConfiguration.templateEmailPlanificationVo"
+                                            [filter]="true"
+                                            [options]="templateEmailPlanifications"
+                                            [showClear]="true" id="8"
+                                            optionLabel="libelle"
+                                            placeholder="Template email planification">
+                                </p-dropdown>
+                            </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                <p-dropdown [(ngModel)]="searchDefaultTemplateConfiguration.templateEmailReplanificationVo"
+                                            [filter]="true"
+                                            [options]="templateEmailReplanifications"
+                                            [showClear]="true" id="9"
+                                            optionLabel="libelle"
+                                            placeholder="Template email replanification">
+                                </p-dropdown>
+                            </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                <p-dropdown [(ngModel)]="searchDefaultTemplateConfiguration.templateEmailRefusVo"
+                                            [filter]="true"
+                                            [options]="templateEmailRefuss"
+                                            [showClear]="true" id="10" optionLabel="libelle"
+                                            placeholder="Template email refus">
+                                </p-dropdown>
+                            </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                <p-dropdown [(ngModel)]="searchDefaultTemplateConfiguration.templateEmailClientInjoinableKoscVo"
+                                            [filter]="true"
+                                            [options]="templateEmailClientInjoinableKoscs"
+                                            [showClear]="true" id="11"
+                                            optionLabel="libelle"
+                                            placeholder="Template email client injoinable kosc">
+                                </p-dropdown>
+                            </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                <p-dropdown [(ngModel)]="searchDefaultTemplateConfiguration.templateEmailConfirmationClientVo"
+                                            [filter]="true"
+                                            [options]="templateEmailConfirmationClients"
+                                            [showClear]="true" id="12"
+                                            optionLabel="libelle"
+                                            placeholder="Template email confirmation client">
+                                </p-dropdown>
+                            </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                <p-dropdown [(ngModel)]="searchDefaultTemplateConfiguration.templateEmailMauvaisContactVo"
+                                            [filter]="true"
+                                            [options]="templateEmailMauvaisContacts"
+                                            [showClear]="true" id="13"
+                                            optionLabel="libelle"
+                                            placeholder="Template email mauvais contact">
+                                </p-dropdown>
+                            </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                <p-dropdown [(ngModel)]="searchDefaultTemplateConfiguration.templateEmailCriVo"
+                                            [filter]="true"
+                                            [options]="templateEmailCris"
+                                            [showClear]="true" id="14" optionLabel="libelle"
+                                            placeholder="Template email cri">
+                                </p-dropdown>
+                            </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <p-dropdown [(ngModel)]="searchDefaultTemplateConfiguration.enabled" [filter]="false"
+                                                [options]="yesOrNoEnabled"
+                                                [showClear]="true" id="15" optionLabel="label"
+                                                optionValue="value" placeholder="Enabled">
+                                    </p-dropdown>
+                                </span>
+                </div>
+
+                <div class="align-search-button">
+                    <button (click)="searchRequest()" class="p-button-info p-mr-2" icon="pi pi-sort-amount-down" label="Validate"
+                            pButton pRipple></button>
+                </div>
+            </p-toolbar>
+
+
+            <p-table #dt [(selection)]="selectedDefaultTemplateConfiguration" [columns]="cols" [globalFilterFields]="['emailKosc', 'emailManeo', 'templateEmailFtlVolibelle', 'templateEmailClotureVolibelle', 'templateSuiviVolibelle', 'templateEmailClientInjoinableVolibelle', 'templateEmailReportVolibelle', 'templateEmailPlanificationVolibelle', 'templateEmailReplanificationVolibelle', 'templateEmailRefusVolibelle', 'templateEmailClientInjoinableKoscVolibelle', 'templateEmailConfirmationClientVolibelle', 'templateEmailMauvaisContactVolibelle', 'templateEmailCriVolibelle', 'enabled']" [paginator]="true"
+                     [rowHover]="true"
+                     [rowsPerPageOptions]="[8,25,50]"
+                     [rows]="8" [showCurrentPageReport]="true" [value]="defaultTemplateConfigurations"
+                     currentPageReportTemplate="Les éléments de {first} à {last} sur {totalRecords} "
+                     dataKey="id" styleClass="p-datatable-customers">
+                <ng-template pTemplate="caption">
+                    <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                        <h5 class="p-m-0">Liste des default template configurations</h5>
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-search"></i>
+                            <input (input)="dt.filterGlobal($event.target.value, 'contains')" pInputText placeholder="Search..."
+                                   type="text"/>
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 3rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+
+
+                        <th pSortableColumn="emailKosc">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Email kosc</span>
+                                <p-sortIcon field="emailKosc"></p-sortIcon>
+                                <p-columnFilter class="ml-auto" display="menu"
+                                                field="defaultTemplateConfiguration.emailKosc" type="text"></p-columnFilter>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="emailManeo">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Email maneo</span>
+                                <p-sortIcon field="emailManeo"></p-sortIcon>
+                                <p-columnFilter class="ml-auto" display="menu"
+                                                field="defaultTemplateConfiguration.emailManeo" type="text"></p-columnFilter>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="templateEmailFtl">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Template email ftl</span>
+                                <p-sortIcon field="templateEmailFtl"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="templateEmailCloture">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Template email cloture</span>
+                                <p-sortIcon field="templateEmailCloture"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="templateSuivi">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Template suivi</span>
+                                <p-sortIcon field="templateSuivi"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="templateEmailClientInjoinable">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Template email client injoinable</span>
+                                <p-sortIcon field="templateEmailClientInjoinable"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="templateEmailReport">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Template email report</span>
+                                <p-sortIcon field="templateEmailReport"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="templateEmailPlanification">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Template email planification</span>
+                                <p-sortIcon field="templateEmailPlanification"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="templateEmailReplanification">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Template email replanification</span>
+                                <p-sortIcon field="templateEmailReplanification"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <!--
+                        <th pSortableColumn="templateEmailRefus">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Template email refus</span>
+                                <p-sortIcon field="templateEmailRefus"></p-sortIcon>
+                            </div>
+                        </th>
+                        -->
+
+
+                        <!--
+                        <th pSortableColumn="templateEmailClientInjoinableKosc">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Template email client injoinable kosc</span>
+                                <p-sortIcon field="templateEmailClientInjoinableKosc"></p-sortIcon>
+                            </div>
+                        </th>
+                        -->
+
+
+                        <!--
+                        <th pSortableColumn="templateEmailConfirmationClient">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Template email confirmation client</span>
+                                <p-sortIcon field="templateEmailConfirmationClient"></p-sortIcon>
+                            </div>
+                        </th>
+                        -->
+
+
+                        <!--
+                        <th pSortableColumn="templateEmailMauvaisContact">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Template email mauvais contact</span>
+                                <p-sortIcon field="templateEmailMauvaisContact"></p-sortIcon>
+                            </div>
+                        </th>
+                        -->
+
+
+                        <!--
+                        <th pSortableColumn="templateEmailCri">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Template email cri</span>
+                                <p-sortIcon field="templateEmailCri"></p-sortIcon>
+                            </div>
+                        </th>
+                        -->
+
+
+                        <!--
+                        <th pSortableColumn="enabled">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Enabled</span>
+                                <p-sortIcon field="enabled"></p-sortIcon>
+                            </div>
+                        </th>
+                        -->
+
+
+                        <th>Actions</th>
+                    </tr>
+                </ng-template>
+                <ng-template let-defaultTemplateConfiguration pTemplate="body">
+                    <tr>
+                        <td>
+                            <p-tableCheckbox [value]="defaultTemplateConfiguration"></p-tableCheckbox>
+                        </td>
+
+                        <td>{{defaultTemplateConfiguration.emailKosc}}</td>
+
+
+                        <td>{{defaultTemplateConfiguration.emailManeo}}</td>
+
+
+                        <td>{{defaultTemplateConfiguration.templateEmailFtlVo?.libelle}}</td>
+
+
+                        <td>{{defaultTemplateConfiguration.templateEmailClotureVo?.libelle}}</td>
+
+
+                        <td>{{defaultTemplateConfiguration.templateSuiviVo?.libelle}}</td>
+
+
+                        <td>{{defaultTemplateConfiguration.templateEmailClientInjoinableVo?.libelle}}</td>
+
+
+                        <td>{{defaultTemplateConfiguration.templateEmailReportVo?.libelle}}</td>
+
+
+                        <td>{{defaultTemplateConfiguration.templateEmailPlanificationVo?.libelle}}</td>
+
+
+                        <!--
+                           <td>{{defaultTemplateConfiguration.templateEmailReplanificationVo?.libelle}}</td>
+                        -->
+
+                        <!--
+                           <td>{{defaultTemplateConfiguration.templateEmailRefusVo?.libelle}}</td>
+                        -->
+
+                        <!--
+                           <td>{{defaultTemplateConfiguration.templateEmailClientInjoinableKoscVo?.libelle}}</td>
+                        -->
+
+                        <!--
+                           <td>{{defaultTemplateConfiguration.templateEmailConfirmationClientVo?.libelle}}</td>
+                        -->
+
+                        <!--
+                           <td>{{defaultTemplateConfiguration.templateEmailMauvaisContactVo?.libelle}}</td>
+                        -->
+
+                        <!--
+                           <td>{{defaultTemplateConfiguration.templateEmailCriVo?.libelle}}</td>
+                        -->
+
+                        <!--
+                           <td><i *ngIf="defaultTemplateConfiguration.enabled" class="pi pi-check checked-toogle"></i>
+                               <i *ngIf="!defaultTemplateConfiguration.enabled" class="pi pi-times unchecked-toogle"></i>
+                           </td>
+                        -->
+
+
+                        <td>
+                            <button (click)="editDefaultTemplateConfiguration(defaultTemplateConfiguration)" class="p-button-rounded p-button-success p-mr-2" icon="pi pi-pencil"
+                                    pButton
+                                    pRipple></button>
+                            <button (click)="viewDefaultTemplateConfiguration(defaultTemplateConfiguration)" class="p-button-rounded p-button-info p-mr-2" icon="pi pi-list" pButton
+                                    pRipple></button>
+                            <button (click)="deleteDefaultTemplateConfiguration(defaultTemplateConfiguration)" class="p-button-rounded p-button-danger p-mr-2" icon="pi pi-trash" pButton
+                                    pRipple></button>
+
+                            <button (click)="duplicateDefaultTemplateConfiguration(defaultTemplateConfiguration)" class="p-button-rounded p-button-raised p-button-warning" icon="pi pi-copy"
+                                    pButton
+                                    pRipple></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="summary">
+                    <div class="p-d-flex p-ai-center p-jc-between">
+                        En totale
+                        il {{defaultTemplateConfigurations ? defaultTemplateConfigurations.length == 1 ? 'y a' : 'y a' : 'y a' }} {{defaultTemplateConfigurations ? defaultTemplateConfigurations.length : 0 }} {{defaultTemplateConfigurations ? defaultTemplateConfigurations.length == 1 ? 'default template configuration' : 'default template configurations' : 0 }}
+                        .
+                    </div>
+                </ng-template>
+            </p-table>
+        </div>
+
+        <app-default-template-configuration-create-chercheur></app-default-template-configuration-create-chercheur>
+        <app-default-template-configuration-edit-chercheur></app-default-template-configuration-edit-chercheur>
+        <app-default-template-configuration-view-chercheur></app-default-template-configuration-view-chercheur>
+        <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+    </div>
+</div>

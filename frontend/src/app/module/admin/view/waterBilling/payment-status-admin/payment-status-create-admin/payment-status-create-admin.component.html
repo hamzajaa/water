@@ -1,0 +1,51 @@
+<p-dialog [(visible)]="createPaymentStatusDialog" [style]="{width: '70vw'}"
+          header="Payment Status" [modal]="true"
+          styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+
+
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="Payment Status">
+                <div class="p-grid">
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="1">Code<span style="color: red;">*</span></label>
+                        <input class="p-mb-2 p-mr-2" type="text" pInputText
+                               placeholder="Code"
+                               id="1" [(ngModel)]="selectedPaymentStatus.code"
+                               [ngClass]="{'ng-invalid ng-dirty' : !_validPaymentStatusCode}"/>
+                        <small class='p-error' *ngIf='!validPaymentStatusCode'>Code is required.</small>
+                    </div>
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="1">Libel<span style="color: red;">*</span></label>
+                        <input class="p-mb-2 p-mr-2" type="text" pInputText
+                               placeholder="Libel"
+                               id="1" [(ngModel)]="selectedPaymentStatus.libel"
+                               [ngClass]="{'ng-invalid ng-dirty' : !_validPaymentStatusLibel}"/>
+                        <small class='p-error' *ngIf='!validPaymentStatusLibel'>Libel is required.</small>
+                    </div>
+
+
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <div class="p-grid">
+            <div>
+                <button pButton pRipple label="Cancel" icon="pi pi-times"
+                        class="p-button-text" (click)="hideCreateDialog()"></button>
+            </div>
+            <div>
+                <button pButton pRipple label="Validate" icon="pi pi-check"
+                        (click)="save()"></button>
+            </div>
+        </div>
+    </ng-template>
+
+
+</p-dialog>

@@ -1,0 +1,272 @@
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<div class="p-grid">
+    <div class="p-col-12">
+        <p-toast></p-toast>
+        <div class="card">
+            <p-toolbar styleClass="p-mb-4">
+                <ng-template pTemplate="left">
+                    <button (click)="openCreatePayment('payment')" class="p-button-success p-mr-2 p-mb-2"
+                            icon="pi pi-plus" label="New" pButton
+                            pRipple></button>
+
+
+                    <button (click)="this.findByCriteriaShow = !this.findByCriteriaShow"
+                            class="p-button-success p-mr-2 p-mb-2"
+                            icon="pi pi-{{findByCriteriaShow?'angle-down':'angle-right'}}"
+                            label="Search"
+                            pButton
+                            pRipple></button>
+                </ng-template>
+                <ng-template pTemplate="right">
+                    <p-splitButton [model]="excelPdfButons" icon="pi pi-download" label="Exporter"
+                                   styleClass="p-button-help"></p-splitButton>
+
+                    <button (click)="showDisplayImport()"
+                            class="p-button-primary p-mr-2 p-mb-2" icon="pi pi-upload"
+                            pButton style="width: 150px ;margin-top: 6px ;margin-left: 2px"
+                            label="Upload"
+                            pRipple></button>
+
+                    <div *ngIf="showSpinner" class="my-spinner">
+                        <p-progressSpinner
+                                [style]="{width: '60px', height: '60px' }"
+                                styleClass="custom-spinner" strokeWidth="8" fill="#EEEEEE"
+                                animationDuration=".5s"></p-progressSpinner>
+                    </div>
+
+                </ng-template>
+
+
+            </p-toolbar>
+            <p-toolbar *ngIf="findByCriteriaShow">
+                <div class="align-form-search">
+
+                       <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchPayment.previousNumber" class="p-mr-2" id="5"
+                                           pInputText type="text">
+                                    <label for="5">Previous Number</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchPayment.newNumber" class="p-mr-2" id="6"
+                                           pInputText type="text">
+                                    <label for="6">New Number</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchPayment.consumptionRate" class="p-mr-2" id="6"
+                                           pInputText type="text">
+                                    <label for="6">Consumption Rate</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchPayment.totalPay" class="p-mr-2" id="6"
+                                           pInputText type="text">
+                                    <label for="6">Total Pay</label>
+                                </span>
+
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                <p-dropdown [(ngModel)]="searchPayment.clientVo" [filter]="true"
+                                            [options]="clients"
+                                            [showClear]="true" id="1" optionLabel="userName"
+                                            placeholder="Client">
+                                </p-dropdown>
+                            </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                <p-dropdown [(ngModel)]="searchPayment.paymentCategoryVo" [filter]="true"
+                                            [options]="paymentCategorys"
+                                            [showClear]="true" id="1" optionLabel="code"
+                                            placeholder="PaymentCategory">
+                                </p-dropdown>
+                            </span>
+
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                <p-dropdown [(ngModel)]="searchPayment.paymentStatusVo" [filter]="true"
+                                            [options]="paymentStatuss"
+                                            [showClear]="true" id="1" optionLabel="libel"
+                                            placeholder="PaymentStatus">
+                                </p-dropdown>
+                            </span>
+
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                            <p-calendar
+                                    [(ngModel)]="searchPayment.datePayMin" class="p-mr-2"
+                                    dateFormat="dd-MM-yy"
+                                    id="2-1"></p-calendar>
+                            <label for="2-1">Date Expense Min</label>
+                        </span>
+
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                            <p-calendar
+                                    [(ngModel)]="searchPayment.datePayMax" class="p-mr-2"
+                                    dateFormat="dd-MM-yy"
+                                    id="2-2"></p-calendar>
+                            <label for="2-2">Date Expense Max</label>
+                        </span>
+
+
+                    <div class="align-search-button">
+                        <button (click)="searchRequest()" class="p-button-info p-mr-2" icon="pi pi-sort-amount-down"
+                                label="Validate"
+                                pButton pRipple></button>
+                    </div>
+                </div>
+            </p-toolbar>
+
+
+            <p-table #dt [(selection)]="selectedPayment" [columns]="cols"
+                     [globalFilterFields]="['previousNumber','newNumber','consumptionRate','totalPay','clientVoname','paymentCategoryVocode','paymentStatusVolibel', 'datePay']"
+                     [paginator]="true"
+                     [rowHover]="true"
+                     [rowsPerPageOptions]="[8,25,50]"
+                     [rows]="8" [showCurrentPageReport]="true" [value]="payments"
+                     currentPageReportTemplate="Les éléments de {first} à {last} sur {totalRecords} "
+                     dataKey="id" styleClass="p-datatable-customers">
+                <ng-template pTemplate="caption">
+                    <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                        <h5 class="p-m-0">List of payments</h5>
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-search"></i>
+                            <input (input)="dt.filterGlobal($event.target.value, 'contains')" pInputText
+                                   placeholder="Search..."
+                                   type="text"/>
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 3rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+
+
+                        <th pSortableColumn="previousNumber">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Previous Number</span>
+                                <p-sortIcon field="previousNumber"></p-sortIcon>
+                            </div>
+                        </th>
+
+                        <th pSortableColumn="newNumber">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>New Number</span>
+                                <p-sortIcon field="newNumber"></p-sortIcon>
+                            </div>
+                        </th>
+
+                        <th pSortableColumn="consumptionRate">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Consumption Rate</span>
+                                <p-sortIcon field="consumptionRate"></p-sortIcon>
+                            </div>
+                        </th>
+
+                        <th pSortableColumn="totalPay">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Total Pay</span>
+                                <p-sortIcon field="totalPay"></p-sortIcon>
+                            </div>
+                        </th>
+
+                        <th pSortableColumn="client">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Client</span>
+                                <p-sortIcon field="client"></p-sortIcon>
+                            </div>
+                        </th>
+
+                        <th pSortableColumn="paymentCategory">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Payment Category</span>
+                                <p-sortIcon field="paymentCategory"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="paymentStatus">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Payment Status</span>
+                                <p-sortIcon field="paymentStatus"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="datePay">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Date Pay</span>
+                                <p-sortIcon field="datePay"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <th>Actions</th>
+                    </tr>
+                </ng-template>
+                <ng-template let-payment pTemplate="body">
+                    <tr>
+                        <td>
+                            <p-tableCheckbox [value]="payment"></p-tableCheckbox>
+                        </td>
+
+                        <td>{{payment.previousNumber}}</td>
+                        <td>{{payment.newNumber}}</td>
+                        <td>{{payment.consumptionRate}}</td>
+                        <td>{{payment.totalPay}}</td>
+
+                        <td>{{payment.clientVo?.userName}}</td>
+                        <td>{{payment.paymentCategoryVo?.code}}</td>
+                        <td>{{payment.paymentStatusVo?.libel}}</td>
+
+                        <td>{{payment.datePay | date :'dd/MM/yyyy HH:mm' }}</td>
+
+                        <td>
+                            <button (click)="editPayment(payment)" class="p-button-rounded p-button-success p-mr-2"
+                                    icon="pi pi-pencil"
+                                    pButton
+                                    pRipple></button>
+                            <button (click)="viewPayment(payment)" class="p-button-rounded p-button-info p-mr-2"
+                                    icon="pi pi-list" pButton
+                                    pRipple></button>
+                            <button (click)="deletePayment(payment)" class="p-button-rounded p-button-danger p-mr-2"
+                                    icon="pi pi-trash" pButton
+                                    pRipple></button>
+
+                            <button (click)="duplicatePayment(payment)"
+                                    class="p-button-rounded p-button-raised p-button-warning" icon="pi pi-copy"
+                                    pButton
+                                    pRipple></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="summary">
+                    <div class="p-d-flex p-ai-center p-jc-between">
+                        En totale
+                        il {{payments ? payments.length == 1 ? 'y a' : 'y a' : 'y a' }} {{payments ? payments.length : 0 }} {{payments ? payments.length == 1 ? 'payment' : 'payments' : 0 }}
+                        .
+                    </div>
+                </ng-template>
+            </p-table>
+        </div>
+
+        <app-payment-create-admin></app-payment-create-admin>
+        <app-payment-edit-admin></app-payment-edit-admin>
+        <app-payment-view-admin></app-payment-view-admin>
+        <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+    </div>
+</div>
+
+<p-dialog [(visible)]="displayImport" [style]="{width: '35vw'}" [draggable]="false"
+          [modal]="true">
+    <ng-template pTemplate="header">
+        <h5 style="justify-content: center">Please, Choose the file and upload it</h5>
+    </ng-template>
+    <ng-template pTemplate="body">
+        <p-tabView>
+            <div class="p-grid " style="margin-left: 45px">
+                <p-fileUpload name="file" url="http://localhost:8036/api/excel/upload"
+                              (onUpload)="fileChange($event)" (onSend)="hideDisplayImport()"
+                              multiple="multiple" accept=".xlsx, .xls" maxFileSize="1000000" #fileUpload>
+                </p-fileUpload>
+            </div>
+
+        </p-tabView>
+    </ng-template>
+</p-dialog>
+

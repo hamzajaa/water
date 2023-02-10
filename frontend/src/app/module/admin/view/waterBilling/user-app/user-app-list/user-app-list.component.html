@@ -1,0 +1,177 @@
+<!--<app-badge-card-view
+        ></app-badge-card-view>-->
+
+<div class="p-grid">
+    <div class="p-col-12">
+        <p-toast></p-toast>
+        <div class="card">
+            <p-toolbar styleClass="p-mb-4">
+                <ng-template pTemplate="left">
+                    <button pButton pRipple label="{{'New'}}" icon="pi pi-plus"
+                            class="p-button-success p-mr-2 p-mb-2"
+                            (click)="openCreateDialog()"></button>
+
+                </ng-template>
+
+            </p-toolbar>
+
+
+            <p-table #dt [value]="users" [columns]="cols" [rows]="10" [paginator]="true"
+                     [rowsPerPageOptions]="[10,25,50,100,500]"
+                     [ngClass]="{'faa-custom-card-table': isCardDisplayActivated }" sortMode="multiple"
+                     [globalFilterFields]="['numeroMatricule', 'email', 'credentialsNonExpired', 'enabled', 'createdAt', 'updatedAt',
+                     'accountNonExpired', 'accountNonLocked', 'username', 'password', 'prenom', 'nom','passwordChanged']"
+                      dataKey="id"
+                     styleClass="p-datatable-customers"
+                     currentPageReportTemplate="Affichage de {first} à {last} des {totalRecords} des entrées"
+                     [showCurrentPageReport]="true">
+                <ng-template pTemplate="caption">
+                    <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                        <h5 class="p-m-0">List of Utilisateurs</h5>
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text" maxlength="30" placeholder="Search..."
+                                   />
+                        </span>
+<!--                        <app-select-box-sort-table-gestion-equipe-admin *ngIf="isCardDisplayActivated"-->
+<!--                                                                     >-->
+<!--                        </app-select-box-sort-table-gestion-equipe-admin>-->
+                    </div>
+                </ng-template>
+
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 3rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+
+                        <th pSortableColumn="email">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Email</span>
+                                <p-sortIcon field="email"></p-sortIcon>
+                                <p-columnFilter type="text" field="email" display="menu"></p-columnFilter>
+                            </div>
+                        </th>
+
+                        <th pSortableColumn="prenom">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Pr&eacute;nom</span>
+                                <p-sortIcon field="prenom"></p-sortIcon>
+                                <p-columnFilter type="text" field="prenom" display="menu"></p-columnFilter>
+                            </div>
+                        </th>
+
+                        <th pSortableColumn="nom">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Nom</span>
+                                <p-sortIcon field="nom"></p-sortIcon>
+                                <p-columnFilter type="text" field="nom" display="menu"></p-columnFilter>
+                            </div>
+                        </th>
+
+
+
+                        <th pSortableColumn="role">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Role</span>
+                                <p-sortIcon field="role"></p-sortIcon>
+                                <p-columnFilter type="text" field="role" display="menu"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th>Actions</th>
+                     <!--   <th>
+                            <p-inputSwitch [(ngModel)]="checked"></p-inputSwitch>
+                        </th>-->
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-user>
+
+                    <!--        Blocs cartes        -->
+<!--                    <td class="p-col-fixed" >-->
+<!--                    <app-custom-card *ngIf="checked" [dateCreation]="user.createdAt"-->
+<!--                                     [cardTitle]="user.nom + ' ' + user.prenom">-->
+<!--                        <div card-body>-->
+<!--                            <ul>-->
+<!--                                <li><b>{{'username'}} :</b>-->
+<!--                                    {{user.username}}</li>-->
+<!--                                <li><b>Email :</b>-->
+<!--                                    {{user.email}}</li>-->
+<!--                                <li><b>{{'updatedAt'}}</b>-->
+<!--                                    {{user.updatedAt | date:'dd/MM/yyyy'}}</li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                        <div card-buttons>-->
+<!--                            <ng-template [ngTemplateOutlet]="boutonsActions"-->
+<!--                                         [ngTemplateOutletContext]="{user: user}"></ng-template>-->
+<!--                        </div>-->
+<!--                    </app-custom-card>-->
+<!--                    </td>-->
+                    <!--                    <tr *ngFor="let user of users">-->
+                    <tr *ngIf="!checked">
+                        <td>
+                            <p-tableCheckbox [value]="user"></p-tableCheckbox>
+                        </td>
+                        <td>{{user.email }}</td>
+                        <td>{{user.prenom }}</td>
+                        <td>{{user.nom }}</td>
+                        <td>
+                            {{user.roles.length > 0 ? user.roles[0].authority : 'Aucun role' }}
+                        </td>
+                        <td>
+                            <ng-template [ngTemplateOutlet]="boutonsActions"
+                                         [ngTemplateOutletContext]="{user: user}"></ng-template>
+                        </td>
+                    </tr>
+
+                </ng-template>
+                <ng-template pTemplate="summary">
+                    <div class="p-d-flex p-ai-center p-jc-between">
+                        Total
+                        : {{users ? users.length : 0 }} {{users ? users.length == 1 ? 'user' : 'users' : 0 }}
+                        .
+                    </div>
+                </ng-template>
+                <ng-template #boutonsActions let-user="user">
+                    <button pButton pRipple icon="pi pi-pencil" title="Editer"
+                            class="p-button-rounded p-button-success p-mr-2"
+                            (click)="toEdit(user)"></button>
+                    <button pButton pRipple icon="pi pi-list" class="p-button-rounded p-button-info p-mr-2"
+                            title="Voir chercheur"
+                            (click)="toView(user)"></button>
+
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger p-mr-2"
+                            title="Effacer un Utilisateur"
+                            (click)="deleteUser(user)"
+                            ></button>
+
+                </ng-template>
+            </p-table>
+        </div>
+
+
+        <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+        <p-dialog header="Chargement des chercheurs" [(visible)]="chargement">
+            <div *ngIf="!chargementTermine && !chargementFailed">
+                <div style="margin:0 auto;width: 160px;">
+                    <p-progressSpinner></p-progressSpinner>
+                    <p>Chargement en cours ...</p>
+                </div>
+                <div>
+                    <p-message severity="warn"
+                               text="Merci d'attendre. Le chargement peut prendre plusieurs minutes."></p-message>
+                </div>
+            </div>
+            <div *ngIf="chargementTermine">
+                <p-messages [(value)]="msgsSuccessImport" [enableService]="false"></p-messages>
+            </div>
+            <div *ngIf="chargementFailed">
+                <p-messages [(value)]="msgsFailedImport" [enableService]="false"></p-messages>
+            </div>
+        </p-dialog>
+
+    </div>
+</div>
+
+<app-user-app-add></app-user-app-add>
+<app-user-app-edit></app-user-app-edit>
+<app-user-app-view></app-user-app-view>

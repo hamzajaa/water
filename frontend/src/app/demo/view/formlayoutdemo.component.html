@@ -1,0 +1,112 @@
+<div class="p-grid">
+    <div class="p-col-12 p-md-6">
+        <div class="card">
+            <h5>Vertical</h5>
+            <div class="p-fluid">
+                <div class="p-field">
+                    <label for="prenom1">Name</label>
+                    <input id="prenom1" pInputText type="text">
+                </div>
+                <div class="p-field">
+                    <label for="nom1">Email</label>
+                    <input id="nom1" pInputText type="text">
+                </div>
+                <div class="p-field">
+                    <label for="age1">Age</label>
+                    <input id="age1" pInputText type="text">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h5>Vertical Grid</h5>
+            <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col">
+                    <label for="prenom2">Name</label>
+                    <input id="prenom2" pInputText type="text">
+                </div>
+                <div class="p-field p-col">
+                    <label for="nom2">Email</label>
+                    <input id="nom2" pInputText type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-col-12 p-md-6">
+        <div class="card">
+            <h5>Horizontal</h5>
+            <div class="p-fluid">
+                <div class="p-field p-grid">
+                    <label class="p-col-12 p-mb-2 p-md-2 p-mb-md-0" for="prenom4">Name</label>
+                    <div class="p-col-12 p-md-10">
+                        <input id="prenom4" pInputText type="text">
+                    </div>
+                </div>
+                <div class="p-field p-grid">
+                    <label class="p-col-12 p-mb-2 p-md-2 p-mb-md-0" for="nom4">Email</label>
+                    <div class="p-col-12 p-md-10">
+                        <input id="nom4" pInputText type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h5>Inline</h5>
+            <div class="p-formgroup-inline">
+                <div class="p-field">
+                    <label class="p-sr-only" for="prenom5">prenom</label>
+                    <input id="prenom5" pInputText placeholder="prenom" type="text">
+                </div>
+                <div class="p-field">
+                    <label class="p-sr-only" for="nom5">nom</label>
+                    <input id="nom5" pInputText placeholder="nom" type="text">
+                </div>
+                <button label="Submit" pButton pRipple type="button"></button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h5>Help Text</h5>
+            <div class="p-field p-fluid">
+                <label for="username">Username</label>
+                <input aria-describedby="username-help" id="username" pInputText type="username">
+                <small id="username-help">Enter your username to reset your password.</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-col-12">
+        <div class="card">
+            <h5>Advanced</h5>
+            <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="prenom6">prenom</label>
+                    <input id="prenom6" pInputText type="text">
+                </div>
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="nom6">nom</label>
+                    <input id="nom6" pInputText type="text">
+                </div>
+                <div class="p-field p-col-12">
+                    <label for="address">Address</label>
+                    <textarea id="address" pInputTextarea rows="4" type="text"></textarea>
+                </div>
+                <div class="p-field p-col-12 p-md-6">
+                    <label for="city">City</label>
+                    <input id="city" pInputText type="text">
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label for="state">State</label>
+                    <p-dropdown [(ngModel)]="selectedState" [options]="states" inputId="state" optionLabel="name"
+                                placeholder="Select"></p-dropdown>
+                </div>
+                <div class="p-field p-col-12 p-md-3">
+                    <label for="zip">Zip</label>
+                    <input id="zip" pInputText type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

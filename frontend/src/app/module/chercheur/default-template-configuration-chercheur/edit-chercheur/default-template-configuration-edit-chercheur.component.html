@@ -1,0 +1,288 @@
+<p-dialog [(visible)]="editDefaultTemplateConfigurationDialog" [draggable]="false"
+          [maximizable]="true" [modal]="true"
+          [resizable]="false" [style]="{width: '70vw'}" header="Default template configuration" styleClass="p-fluid">
+
+
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="Default template configuration">
+                <div class="p-grid">
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="1">Email kosc<span style="color: red;">*</span></label>
+                        <input [(ngModel)]="selectedDefaultTemplateConfiguration.emailKosc" [ngClass]="{'ng-invalid ng-dirty' : !validDefaultTemplateConfigurationEmailKosc}" class="p-mb-2 p-mr-2"
+                               id="1"
+                               pInputText placeholder="Email kosc"
+                               type="text"/>
+                        <small *ngIf='!validDefaultTemplateConfigurationEmailKosc' class='p-error'>EmailKosc is required.</small>
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="2">Email maneo<span style="color: red;">*</span></label>
+                        <input [(ngModel)]="selectedDefaultTemplateConfiguration.emailManeo" [ngClass]="{'ng-invalid ng-dirty' : !validDefaultTemplateConfigurationEmailManeo}" class="p-mb-2 p-mr-2"
+                               id="2"
+                               pInputText placeholder="Email maneo"
+                               type="text"/>
+                        <small *ngIf='!validDefaultTemplateConfigurationEmailManeo' class='p-error'>EmailManeo is required.</small>
+                    </div>
+
+
+                    <div class="p-field p-col-11 p-md-2">
+                        <label for="3">Template email ftl</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailFtlVo"
+                                    [filter]="true"
+                                    [options]="templateEmailFtls" [showClear]="true" filterMatchMode="contains"
+                                    id="3"
+                                    optionLabel="libelle"
+                                    placeholder="Template email ftl">
+                        </p-dropdown>
+
+                    </div>
+                    <div class="p-col-1">
+                        <label></label>
+                        <button (click)="openCreatetemplateEmailFtl('templateEmailFtl')" class="p-button-success one-colonne-btn-success-align" icon="pi pi-plus"
+                                pButton pRipple
+                                type="button"></button>
+                    </div>
+                    <div class="p-field p-col-11 p-md-2">
+                        <label for="4">Template email cloture</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailClotureVo"
+                                    [filter]="true"
+                                    [options]="templateEmailClotures" [showClear]="true" filterMatchMode="contains"
+                                    id="4"
+                                    optionLabel="libelle"
+                                    placeholder="Template email cloture">
+                        </p-dropdown>
+
+                    </div>
+                    <div class="p-col-1">
+                        <label></label>
+                        <button (click)="openCreatetemplateEmailCloture('templateEmailCloture')" class="p-button-success one-colonne-btn-success-align" icon="pi pi-plus"
+                                pButton pRipple
+                                type="button"></button>
+                    </div>
+                    <div class="p-field p-col-11 p-md-2">
+                        <label for="5">Template suivi</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateSuiviVo"
+                                    [filter]="true"
+                                    [options]="templateSuivis" [showClear]="true" filterMatchMode="contains"
+                                    id="5"
+                                    optionLabel="libelle"
+                                    placeholder="Template suivi">
+                        </p-dropdown>
+
+                    </div>
+                    <div class="p-col-1">
+                        <label></label>
+                        <button (click)="openCreatetemplateSuivi('templateSuivi')" class="p-button-success one-colonne-btn-success-align" icon="pi pi-plus"
+                                pButton pRipple
+                                type="button"></button>
+                    </div>
+                    <div class="p-field p-col-11 p-md-2">
+                        <label for="6">Template email client injoinable</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailClientInjoinableVo"
+                                    [filter]="true"
+                                    [options]="templateEmailClientInjoinables" [showClear]="true" filterMatchMode="contains"
+                                    id="6"
+                                    optionLabel="libelle"
+                                    placeholder="Template email client injoinable">
+                        </p-dropdown>
+
+                    </div>
+                    <div class="p-col-1">
+                        <label></label>
+                        <button (click)="openCreatetemplateEmailClientInjoinable('templateEmailClientInjoinable')" class="p-button-success one-colonne-btn-success-align" icon="pi pi-plus"
+                                pButton
+                                pRipple
+                                type="button"></button>
+                    </div>
+                    <div class="p-field p-col-11 p-md-2">
+                        <label for="7">Template email report</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailReportVo"
+                                    [filter]="true"
+                                    [options]="templateEmailReports" [showClear]="true" filterMatchMode="contains"
+                                    id="7"
+                                    optionLabel="libelle"
+                                    placeholder="Template email report">
+                        </p-dropdown>
+
+                    </div>
+                    <div class="p-col-1">
+                        <label></label>
+                        <button (click)="openCreatetemplateEmailReport('templateEmailReport')" class="p-button-success one-colonne-btn-success-align" icon="pi pi-plus"
+                                pButton pRipple
+                                type="button"></button>
+                    </div>
+                    <div class="p-field p-col-11 p-md-2">
+                        <label for="8">Template email planification</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailPlanificationVo"
+                                    [filter]="true"
+                                    [options]="templateEmailPlanifications" [showClear]="true" filterMatchMode="contains"
+                                    id="8"
+                                    optionLabel="libelle"
+                                    placeholder="Template email planification">
+                        </p-dropdown>
+
+                    </div>
+                    <div class="p-col-1">
+                        <label></label>
+                        <button (click)="openCreatetemplateEmailPlanification('templateEmailPlanification')" class="p-button-success one-colonne-btn-success-align" icon="pi pi-plus"
+                                pButton
+                                pRipple
+                                type="button"></button>
+                    </div>
+                    <div class="p-field p-col-11 p-md-2">
+                        <label for="9">Template email replanification</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailReplanificationVo"
+                                    [filter]="true"
+                                    [options]="templateEmailReplanifications" [showClear]="true" filterMatchMode="contains"
+                                    id="9"
+                                    optionLabel="libelle"
+                                    placeholder="Template email replanification">
+                        </p-dropdown>
+
+                    </div>
+                    <div class="p-col-1">
+                        <label></label>
+                        <button (click)="openCreatetemplateEmailReplanification('templateEmailReplanification')" class="p-button-success one-colonne-btn-success-align" icon="pi pi-plus"
+                                pButton
+                                pRipple
+                                type="button"></button>
+                    </div>
+                    <div class="p-field p-col-11 p-md-2">
+                        <label for="10">Template email refus</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailRefusVo"
+                                    [filter]="true"
+                                    [options]="templateEmailRefuss" [showClear]="true" filterMatchMode="contains"
+                                    id="10"
+                                    optionLabel="libelle"
+                                    placeholder="Template email refus">
+                        </p-dropdown>
+
+                    </div>
+                    <div class="p-col-1">
+                        <label></label>
+                        <button (click)="openCreatetemplateEmailRefus('templateEmailRefus')" class="p-button-success one-colonne-btn-success-align" icon="pi pi-plus"
+                                pButton pRipple
+                                type="button"></button>
+                    </div>
+                    <div class="p-field p-col-11 p-md-2">
+                        <label for="11">Template email client injoinable kosc</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailClientInjoinableKoscVo"
+                                    [filter]="true"
+                                    [options]="templateEmailClientInjoinableKoscs" [showClear]="true" filterMatchMode="contains"
+                                    id="11"
+                                    optionLabel="libelle"
+                                    placeholder="Template email client injoinable kosc">
+                        </p-dropdown>
+
+                    </div>
+                    <div class="p-col-1">
+                        <label></label>
+                        <button (click)="openCreatetemplateEmailClientInjoinableKosc('templateEmailClientInjoinableKosc')" class="p-button-success one-colonne-btn-success-align" icon="pi pi-plus"
+                                pButton
+                                pRipple
+                                type="button"></button>
+                    </div>
+                    <div class="p-field p-col-11 p-md-2">
+                        <label for="12">Template email confirmation client</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailConfirmationClientVo"
+                                    [filter]="true"
+                                    [options]="templateEmailConfirmationClients" [showClear]="true" filterMatchMode="contains"
+                                    id="12"
+                                    optionLabel="libelle"
+                                    placeholder="Template email confirmation client">
+                        </p-dropdown>
+
+                    </div>
+                    <div class="p-col-1">
+                        <label></label>
+                        <button (click)="openCreatetemplateEmailConfirmationClient('templateEmailConfirmationClient')" class="p-button-success one-colonne-btn-success-align" icon="pi pi-plus"
+                                pButton
+                                pRipple
+                                type="button"></button>
+                    </div>
+                    <div class="p-field p-col-11 p-md-2">
+                        <label for="13">Template email mauvais contact</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailMauvaisContactVo"
+                                    [filter]="true"
+                                    [options]="templateEmailMauvaisContacts" [showClear]="true" filterMatchMode="contains"
+                                    id="13"
+                                    optionLabel="libelle"
+                                    placeholder="Template email mauvais contact">
+                        </p-dropdown>
+
+                    </div>
+                    <div class="p-col-1">
+                        <label></label>
+                        <button (click)="openCreatetemplateEmailMauvaisContact('templateEmailMauvaisContact')" class="p-button-success one-colonne-btn-success-align" icon="pi pi-plus"
+                                pButton
+                                pRipple
+                                type="button"></button>
+                    </div>
+                    <div class="p-field p-col-11 p-md-2">
+                        <label for="14">Template email cri</label>
+                        <p-dropdown [(ngModel)]="selectedDefaultTemplateConfiguration.templateEmailCriVo"
+                                    [filter]="true"
+                                    [options]="templateEmailCris" [showClear]="true" filterMatchMode="contains"
+                                    id="14"
+                                    optionLabel="libelle"
+                                    placeholder="Template email cri">
+                        </p-dropdown>
+
+                    </div>
+                    <div class="p-col-1">
+                        <label></label>
+                        <button (click)="openCreatetemplateEmailCri('templateEmailCri')" class="p-button-success one-colonne-btn-success-align" icon="pi pi-plus"
+                                pButton pRipple
+                                type="button"></button>
+                    </div>
+                    <div class="p-field align-inputswitch p-col-12  p-md-3">
+                        <div class="label-inputswitch">
+                            <label for="15">Enabled</label>
+                        </div>
+                        <div class="input-switch">
+                            <p-inputSwitch [(ngModel)]="selectedDefaultTemplateConfiguration.enabled" id="15"
+                            >
+                            </p-inputSwitch>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <div class="p-grid">
+            <div>
+                <button (click)="hideEditDialog()" class="p-button-text" icon="pi pi-times" label="Cancel"
+                        pButton pRipple></button>
+            </div>
+            <div>
+                <button (click)="edit()" icon="pi pi-check" label="Validate" pButton pRipple
+                        ></button>
+            </div>
+        </div>
+    </ng-template>
+
+    <app-template-email-ftl-create-chercheur></app-template-email-ftl-create-chercheur>
+    <app-template-email-cloture-create-chercheur></app-template-email-cloture-create-chercheur>
+    <app-template-suivi-create-chercheur></app-template-suivi-create-chercheur>
+    <app-template-email-client-injoinable-create-chercheur></app-template-email-client-injoinable-create-chercheur>
+    <app-template-email-report-create-chercheur></app-template-email-report-create-chercheur>
+    <app-template-email-planification-create-chercheur></app-template-email-planification-create-chercheur>
+    <app-template-email-replanification-create-chercheur></app-template-email-replanification-create-chercheur>
+    <app-template-email-refus-create-chercheur></app-template-email-refus-create-chercheur>
+    <app-template-email-client-injoinable-kosc-create-chercheur></app-template-email-client-injoinable-kosc-create-chercheur>
+    <app-template-email-confirmation-client-create-chercheur></app-template-email-confirmation-client-create-chercheur>
+    <app-template-email-mauvais-contact-create-chercheur></app-template-email-mauvais-contact-create-chercheur>
+    <app-template-email-cri-create-chercheur></app-template-email-cri-create-chercheur>
+
+
+</p-dialog>

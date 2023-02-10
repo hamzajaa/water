@@ -1,0 +1,68 @@
+<p-dialog [(visible)]="viewExpensesDialog" [modal]="true"
+          [style]="{width: '70vw'}" header=""
+          styleClass="p-fluid">
+
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="">
+                <div class="p-grid">
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="5">Title</label>
+                        <input [(ngModel)]="selectedExpenses.title" [disabled]="true" autofocus
+                               class="p-mb-2 p-mr-2" id="5"
+                               pInputText placeholder="Title"
+                               type="text">
+                    </div>
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="5">Amount</label>
+                        <input [(ngModel)]="selectedExpenses.amount" [disabled]="true" autofocus
+                               class="p-mb-2 p-mr-2" id="5"
+                               pInputText placeholder="Amount"
+                               type="text">
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-6">
+                        <label for="1">Expenses Category</label>
+                        <p-dropdown [(ngModel)]="selectedExpenses.expensesCategoryVo" [disabled]="true"
+                                    [filter]="true" [options]="expensesCategorys" [showClear]="true"
+                                    filterMatchMode="contains" id="1"
+                                    optionLabel="identifiant"
+                                    placeholder="ExpensesCategory">
+                        </p-dropdown>
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-6">
+                        <label for="2">Date Expense</label>
+                        <p-calendar [(ngModel)]="selectedExpenses.dateExpense" [disabled]="true" [showSeconds]="false" [showTime]="true"
+                                    dateFormat="{{dateFormat}}" id="2"
+                                    placeholder="Date Expense"></p-calendar>
+                    </div>
+                    
+
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <div class="p-grid">
+            <div>
+                <button (click)="hideViewDialog()" class="p-button-text" icon="pi pi-times" label="Cancel"
+                        pButton pRipple></button>
+            </div>
+        </div>
+    </ng-template>
+
+    <app-expenses-category-create-admin></app-expenses-category-create-admin>
+
+
+</p-dialog>
+
+
+

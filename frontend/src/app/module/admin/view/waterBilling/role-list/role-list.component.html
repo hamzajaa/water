@@ -1,0 +1,92 @@
+<div class="card">
+    <p-toolbar styleClass="p-mb-4">
+        <ng-template pTemplate="left">
+            <button (click)="openNew()" class="p-button-success p-mr-2" icon="pi pi-plus" label="New" pButton
+                    pRipple></button>
+            <button (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length" [label]="Delete" class="p-button-danger" icon="pi pi-trash"
+                    pButton
+                    pRipple></button>
+        </ng-template>
+
+    </p-toolbar>
+
+    <p-table #dt [(selection)]="selectedRoles" [globalFilterFields]="['prenom','nom','email','username']" [paginator]="true"
+             [rowHover]="false" [rows]="10"
+             [showCurrentPageReport]="true" [value]="roles"
+             currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+             dataKey="id">
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex p-ai-center p-jc-between">
+                <h5 class="p-m-0">Manage Roles</h5>
+                <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input (input)="dt.filterGlobal($event.target.value, 'contains')" pInputText placeholder="Search..."
+                           type="text"/>
+                </span>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th style="width: 3rem">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                <th pSortableColumn="nom">Nom
+                    <p-sortIcon field="nom"></p-sortIcon>
+                </th>
+                <th pSortableColumn="created at">Created at
+                    <p-sortIcon field="created at"></p-sortIcon>
+                </th>
+
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template let-role pTemplate="body">
+            <tr>
+                <td>
+                    <p-tableCheckbox [value]="role"></p-tableCheckbox>
+                </td>
+                <td>{{role.authority}}</td>
+                <td>{{role.createdAt}}</td>
+                <td>
+                    <button (click)="editUser(role)" class="p-button-rounded p-button-success p-mr-2" icon="pi pi-pencil" pButton
+                            pRipple></button>
+                    <button (click)="deleteRole(role)" class="p-button-rounded p-button-danger" icon="pi pi-trash" pButton
+                            pRipple></button>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            <div class="p-d-flex p-ai-center p-jc-between">
+                In total there are {{roles ? roles.length : 0 }} Roles.
+            </div>
+        </ng-template>
+    </p-table>
+</div>
+
+<p-dialog [(visible)]="roleDialog" [modal]="true" [style]="{width: '450px'}" header="Product Details"
+          styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-field">
+            <label for="authority">Role name</label>
+            <input [(ngModel)]="selectedRole.authority" autofocus id="authority" pInputText required type="text"/>
+            <small *ngIf="submitted && !selectedRole.authority" class="p-error">nom is required.</small>
+        </div>
+
+        <div class="p-field">
+            <label for="permissions">Permissions</label>
+            <p-dropdown [(ngModel)]="selectedRole.permissions" [options]="" optionLabel="authority" id="permissions">
+            </p-dropdown>
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button (click)="hideDialog()" class="p-button-text" icon="pi pi-times" label="Cancel" pButton pRipple></button>
+        <button (click)="saveRole()" *ngIf="!selectedRole.id" class="p-button-text" icon="pi pi-check" label="Save" pButton
+                pRipple></button>
+        <button (click)="editRoleSubmit()" *ngIf="selectedRole.id" class="p-button-text" icon="pi pi-check" label="Edit" pButton
+                pRipple></button>
+    </ng-template>
+</p-dialog>
+
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+<p-toast position="bottom-center"></p-toast>

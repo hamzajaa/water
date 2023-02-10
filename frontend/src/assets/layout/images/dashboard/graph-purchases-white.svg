@@ -1,0 +1,11 @@
+<svg height="33" viewBox="0 0 249 33" width="249"
+     xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <path d="M0 0h249v33H0z" id="a"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path d="M44.722 18.84l26.915-1.716 34.298 5.606 39.434-10.85 40.553-2.235 35.528 11.688 30.05-22.2V34.5h-256V24.244L21.072 2.971l23.65 15.868z" fill="#ffffffa1" fill-rule="nonzero" mask="url(#b)"
+              stroke="#fff"
+              stroke-width="3"/>
+    </g>
+</svg>

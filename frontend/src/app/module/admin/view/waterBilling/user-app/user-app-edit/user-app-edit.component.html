@@ -1,0 +1,95 @@
+<p-dialog [(visible)]="userEditDialog" [style]="{width: '70vw'}" [header]="userDialogTitle" [modal]="true"
+          styleClass="p-fluid">
+
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="Utilisateur">
+                <div class="p-fluid p-formgrid p-grid">
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="28">Prénom</label>
+                        <input class="p-mb-2 p-mr-2" type="text" maxlength="30" pInputText placeholder="Prenom"
+                               [(ngModel)]="user.prenom" id="28"
+                        >
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="29">Nom</label>
+                        <input class="p-mb-2 p-mr-2" type="text" maxlength="30" pInputText placeholder="Nom"
+                               [(ngModel)]="user.nom" id="29">
+                    </div>
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="Telephone">Telephone</label>
+                        <input class="p-mb-2 p-mr-2" type="text" maxlength="30" pInputText placeholder="Telephone"
+                               [(ngModel)]="user.telephone" id="Telephone">
+                    </div>
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="2">Email<span style="color: red;">*</span></label>
+                        <input class="p-mb-2 p-mr-2" type="text" maxlength="30" pInputText placeholder="Email"
+                               [(ngModel)]="user.email" id="2" [ngClass]="{'ng-invalid ng-dirty' : !validEmailUser}"
+                        >
+                        <small class='p-error' *ngIf='!validEmailUser'>Email is required.</small>
+                    </div>
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="Username">Login</label>
+                        <input class="p-mb-2 p-mr-2" type="text" maxlength="30" pInputText placeholder="Username"
+                               [(ngModel)]="user.username" id="Username">
+                    </div>
+
+                    <div class="p-field align-inputswitch p-col-12  p-md-3">
+                        <div class="label-inputswitch">
+                            <label for="99">Enabled</label>
+                        </div>
+                        <div class="input-switch">
+                            <p-inputSwitch [(ngModel)]="user.enabled" id="99"
+                            >
+                            </p-inputSwitch>
+
+                        </div>
+                    </div>
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <button pButton pRipple label="Enregistrer" (click)="editUserSubmit()" class=" p-button-info p-mb-2 p-mr-2" style="margin-top: 18px"></button>
+                    </div>
+
+                </div>
+            </p-tabPanel>
+            <p-tabPanel header="Modification du mot de passe">
+                <div class="p-fluid p-formgrid p-grid">
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="Password">Mot de Passe</label>
+                        <input class="p-mb-2 p-mr-2" type="password" pPassword placeholder="Mot de Passe"
+                               [(ngModel)]="password" id="Password"
+                        >
+                    </div>
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="Confirme Password">Confirme Mot de Passe</label>
+                        <input class="p-mb-2 p-mr-2" type="password" pPassword placeholder="Confirme Mot de Passe"
+                               [(ngModel)]="confirmPassword" id="Confirme Password" [ngClass]="{'ng-invalid ng-dirty' : !isMatch}"
+                        >
+                        <small class='p-error' *ngIf='!isMatch'>les mots de passe sont incompatible</small>
+                    </div>
+                    <div class="p-field p-col-12 p-md-3">
+                        <button pButton pRipple label="Modifie Mot de Passe" (click)="changePassword()" class=" p-button-success p-mb-2 p-mr-2" style="margin-top: 18px"></button>
+
+                    </div>
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <button pButton pRipple label="Reinitialise Mot de Passe" (click)="resetPassword()" class=" p-button-danger p-mb-2 p-mr-2" style="margin-top: 18px"></button>
+                        <small >le nouveau mot de passe ça sera le Login</small>
+                    </div>
+                </div>
+            </p-tabPanel>
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="{{'Cancel'}}" icon="pi pi-times" (click)="hideDialog()"></button>
+    </ng-template>
+
+</p-dialog>
+
+

@@ -1,0 +1,41 @@
+<p-dialog [(visible)]="createExpensesCategoryDialog" [style]="{width: '70vw'}"
+          header="Expenses Category" [modal]="true"
+          styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+
+
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="Expenses Category">
+                <div class="p-grid">
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="1">Name<span style="color: red;">*</span></label>
+                        <input class="p-mb-2 p-mr-2" type="text" pInputText
+                               placeholder="Name"
+                               id="1" [(ngModel)]="selectedExpensesCategory.name"
+                               [ngClass]="{'ng-invalid ng-dirty' : !validExpensesCategoryName}"/>
+                        <small class='p-error' *ngIf='!validExpensesCategoryName'>Name is required.</small>
+                    </div>
+
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <div class="p-grid">
+            <div>
+                <button pButton pRipple label="Cancel" icon="pi pi-times"
+                        class="p-button-text" (click)="hideCreateDialog()"></button>
+            </div>
+            <div>
+                <button pButton pRipple label="Validate" icon="pi pi-check"
+                        (click)="save()"></button>
+            </div>
+        </div>
+    </ng-template>
+
+
+</p-dialog>

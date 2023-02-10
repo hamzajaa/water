@@ -1,0 +1,252 @@
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+
+<div class="p-grid">
+    <div class="p-col-12">
+        <p-toast></p-toast>
+        <div class="card">
+            <p-toolbar styleClass="p-mb-4">
+                <ng-template pTemplate="left">
+                    <button (click)="openCreateClient('client')" class="p-button-success p-mr-2 p-mb-2"
+                            icon="pi pi-plus" label="New" pButton
+                            pRipple></button>
+
+
+                    <button (click)="this.findByCriteriaShow = !this.findByCriteriaShow"
+                            class="p-button-success p-mr-2 p-mb-2"
+                            icon="pi pi-{{findByCriteriaShow?'angle-down':'angle-right'}}"
+                            label="Search"
+                            pButton
+                            pRipple></button>
+                </ng-template>
+                <ng-template pTemplate="right">
+                    <div class="flex">
+                        <p-splitButton [model]="excelPdfButons" icon="pi pi-download" label="Exporter"
+                                       styleClass="p-button-help"></p-splitButton>
+                    </div>
+                </ng-template>
+
+            </p-toolbar>
+            <p-toolbar *ngIf="findByCriteriaShow">
+
+                <div class="align-form-search">
+                                <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchClient.userName" class="p-mr-2" id="1"
+                                           pInputText type="text">
+                                    <label for="1">User Name</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchClient.cni" class="p-mr-2" id="2"
+                                           pInputText type="text">
+                                    <label for="2">Cni</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchClient.address" class="p-mr-2" id="3"
+                                           pInputText type="text">
+                                    <label for="3">Address</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchClient.phone" class="p-mr-2" id="5"
+                                           pInputText type="text">
+                                    <label for="5">Phone</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchClient.counterNumber" class="p-mr-2" id="6"
+                                           pInputText type="text">
+                                    <label for="6">Counter Number</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchClient.dutyEngagePrice" class="p-mr-2" id="6"
+                                           pInputText type="text">
+                                    <label for="6">Duty Engage Price</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchClient.statusDutyEngagePrice" class="p-mr-2" id="6"
+                                           pInputText type="text">
+                                    <label for="6">Status Duty Engage Price</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                            <p-calendar
+                                    [(ngModel)]="searchClient.recordDateMin" class="p-mr-2"
+                                    dateFormat="dd-MM-yy"
+                                    id="13-1"></p-calendar>
+                            <label for="13-1">Record Date Min</label>
+                        </span>
+
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                            <p-calendar
+                                    [(ngModel)]="searchClient.recordDateMax" class="p-mr-2"
+                                    dateFormat="dd-MM-yy"
+                                    id="13-2"></p-calendar>
+                            <label for="13-2">Record Date Max</label>
+                        </span>
+
+                </div>
+
+                <div class="align-search-button">
+                    <button (click)="searchRequest()" class="p-button-info p-mr-2" icon="pi pi-sort-amount-down"
+                            label="Validate"
+                            pButton pRipple></button>
+                </div>
+            </p-toolbar>
+
+
+            <p-table #dt [(selection)]="selectedClient" [columns]="cols"
+                     [globalFilterFields]="['userName', 'cni', 'address', 'phone', 'counterNumber', 'recordDate']"
+                     [paginator]="true"
+                     [rowHover]="true"
+                     [rowsPerPageOptions]="[8,25,50]"
+                     [rows]="8" [showCurrentPageReport]="true" [value]="clients"
+                     currentPageReportTemplate="Les éléments de {first} à {last} sur {totalRecords} "
+                     dataKey="id" styleClass="p-datatable-customers">
+                <ng-template pTemplate="caption">
+                    <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                        <h5 class="p-m-0">List of clients</h5>
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-search"></i>
+                            <input (input)="dt.filterGlobal($event.target.value, 'contains')" pInputText
+                                   placeholder="Search..."
+                                   type="text"/>
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 3rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+
+                        <th pSortableColumn="userName">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>User Name</span>
+                                <p-sortIcon field="userName"></p-sortIcon>
+<!--                                <p-columnFilter class="ml-auto" display="menu" field="client.userName"-->
+<!--                                                type="text"></p-columnFilter>-->
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="cni">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Cni</span>
+                                <p-sortIcon field="cni"></p-sortIcon>
+<!--                                <p-columnFilter class="ml-auto" display="menu" field="client.cni"-->
+<!--                                                type="text"></p-columnFilter>-->
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="address">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Address</span>
+                                <p-sortIcon field="address"></p-sortIcon>
+<!--                                <p-columnFilter class="ml-auto" display="menu" field="client.address"-->
+<!--                                                type="text"></p-columnFilter>-->
+                            </div>
+                        </th>
+
+                        <th pSortableColumn="phone">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Phone</span>
+                                <p-sortIcon field="phone"></p-sortIcon>
+<!--                                <p-columnFilter class="ml-auto" display="menu" field="client.phone"-->
+<!--                                                type="text"></p-columnFilter>-->
+                            </div>
+                        </th>
+
+                        <th pSortableColumn="counterNumber">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Counter Number</span>
+                                <p-sortIcon field="counterNumber"></p-sortIcon>
+<!--                                <p-columnFilter class="ml-auto" display="menu" field="client.counterNumber"-->
+<!--                                                type="text"></p-columnFilter>-->
+                            </div>
+                        </th>
+
+                        <th pSortableColumn="dutyEngagePrice">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>DutyEngage Price</span>
+                                <p-sortIcon field="dutyEngagePrice"></p-sortIcon>
+<!--                                <p-columnFilter class="ml-auto" display="menu" field="client.dutyEngagePrice"-->
+<!--                                                type="text"></p-columnFilter>-->
+                            </div>
+                        </th>
+
+                        <th pSortableColumn="statusDutyEngagePrice">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Status DutyEngage Price</span>
+                                <p-sortIcon field="statusDutyEngagePrice"></p-sortIcon>
+<!--                                <p-columnFilter class="ml-auto" display="menu" field="client.statusDutyEngagePrice"-->
+<!--                                                type="text"></p-columnFilter>-->
+                            </div>
+                        </th>
+
+                        <th pSortableColumn="recordDate">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Record Date</span>
+                                <p-sortIcon field="recordDate"></p-sortIcon>
+                            </div>
+                        </th>
+
+                        <th>Actions</th>
+                    </tr>
+                </ng-template>
+                <ng-template let-client pTemplate="body">
+                    <tr>
+
+
+                        <td>
+                            <p-tableCheckbox [value]="client"></p-tableCheckbox>
+                        </td>
+
+                        <td>{{client.userName}}</td>
+
+                        <td>{{client.cni}}</td>
+
+                        <td>{{client.address}}</td>
+
+                        <td>{{client.phone}}</td>
+
+                        <td>{{client.counterNumber}}</td>
+
+                        <td>{{client.dutyEngagePrice}}</td>
+
+                        <td>{{client.statusDutyEngagePrice}}</td>
+
+                        <td>{{client.recordDate | date :'dd/MM/yyyy HH:mm' }}</td>
+
+
+                        <td>
+                            <button (click)="editClient(client)" class="p-button-rounded p-button-success p-mr-2"
+                                    icon="pi pi-pencil"
+                                    pButton
+                                    pRipple></button>
+                            <button (click)="viewClient(client)" class="p-button-rounded p-button-info p-mr-2"
+                                    icon="pi pi-list" pButton
+                                    pRipple></button>
+                            <button (click)="deleteClient(client)" class="p-button-rounded p-button-danger p-mr-2"
+                                    icon="pi pi-trash" pButton
+                                    pRipple></button>
+
+                            <button (click)="duplicateClient(client)"
+                                    class="p-button-rounded p-button-raised p-button-warning" icon="pi pi-copy"
+                                    pButton
+                                    pRipple></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="summary">
+                    <div class="p-d-flex p-ai-center p-jc-between">
+                        En totale
+                        il {{clients ? clients.length == 1 ? 'y a' : 'y a' : 'y a' }} {{clients ? clients.length : 0 }} {{clients ? clients.length == 1 ? 'client' : 'clients' : 0 }}
+                        .
+                    </div>
+                </ng-template>
+            </p-table>
+        </div>
+
+        <app-client-create-admin></app-client-create-admin>
+        <app-client-edit-admin></app-client-edit-admin>
+        <app-client-view-admin></app-client-view-admin>
+        <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+    </div>
+</div>

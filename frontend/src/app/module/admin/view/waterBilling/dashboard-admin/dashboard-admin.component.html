@@ -1,0 +1,49 @@
+<div class="p-grid layout-dashboard">
+    <div class="p-col-12 p-md-6 p-lg-3">
+        <div class="overview-box card">
+            <div class="overview-box-value">{{clientNumber}}</div>
+            <div class="overview-box-title">CLIENTS</div>
+            <img src="assets/layout/images/dashboard/graph-tasks.svg" alt="">
+            <div class="overview-box-status">
+                +8.9% <i class="pi pi-arrow-circle-up"></i>
+            </div>
+        </div>
+    </div>
+    <div class="p-col-12 p-md-6 p-lg-3">
+        <div class="overview-box card">
+            <div class="overview-box-value">{{paymentsNumber}}</div>
+            <div class="overview-box-title">PAYMENTS</div>
+            <img src="assets/layout/images/dashboard/graph-purchases.svg" alt="">
+            <div class="overview-box-status">
+                +67.2% <i class="pi pi-arrow-circle-up"></i>
+            </div>
+        </div>
+    </div>
+    <div class="p-col-12 p-md-6 p-lg-3">
+        <div class="overview-box card">
+            <div class="overview-box-value">{{expensesNumber}}</div>
+            <div class="overview-box-title">EXPENSES</div>
+            <img src="assets/layout/images/dashboard/graph-issues.svg" alt="">
+            <div class="overview-box-status">
+                +3.0% <i class="pi pi-arrow-circle-up"></i>
+            </div>
+        </div>
+    </div>
+    <div class="p-col-12 p-md-6 p-lg-3">
+        <div class="overview-box card">
+            <div class="overview-box-value">{{monthlyPaymentNumber}}</div>
+            <div class="overview-box-title">MONTHLY PAYMENT</div>
+            <img src="assets/layout/images/dashboard/graph-messages.svg" alt="">
+            <div class="overview-box-status">
+                +12.5% <i class="pi pi-arrow-circle-up"></i>
+            </div>
+        </div>
+    </div>
+    <div class="p-col-12 p-md-8 p-lg-8">
+        <div class="card card-w-title">
+            <h5>Statistics</h5>
+            <p-chart type="line" [data]="chartData" [options]="chartOptions"></p-chart>
+        </div>
+    </div>
+
+</div>

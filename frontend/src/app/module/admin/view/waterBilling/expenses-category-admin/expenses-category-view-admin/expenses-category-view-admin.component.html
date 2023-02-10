@@ -1,0 +1,37 @@
+<p-dialog [(visible)]="viewExpensesCategoryDialog" [modal]="true"
+          [style]="{width: '70vw'}" header=""
+          styleClass="p-fluid">
+
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="">
+                <div class="p-grid">
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="1">Name</label>
+                        <input [(ngModel)]="selectedExpensesCategory.name" [disabled]="true" autofocus
+                               class="p-mb-2 p-mr-2" id="1"
+                               pInputText placeholder="Name"
+                               type="text">
+                    </div>
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <div class="p-grid">
+            <div>
+                <button (click)="hideViewDialog()" class="p-button-text" icon="pi pi-times" label="Cancel"
+                        pButton pRipple></button>
+            </div>
+        </div>
+    </ng-template>
+
+
+</p-dialog>
+
+
+

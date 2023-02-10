@@ -1,0 +1,76 @@
+<p-dialog [(visible)]="userCreateDialog" [style]="{width: '70vw'}" [header]="userDialogTitle" [modal]="true"
+          styleClass="p-fluid">
+
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="Utilisateur">
+                <div class="p-fluid p-formgrid p-grid">
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="28">Prénom</label>
+                        <input class="p-mb-2 p-mr-2" type="text" maxlength="30" pInputText placeholder="Prenom"
+                               [(ngModel)]="user.prenom" id="28"
+                        >
+                    </div>
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="28">Nom</label>
+                        <input class="p-mb-2 p-mr-2" type="text" maxlength="30" pInputText placeholder="nom"
+                               [(ngModel)]="user.nom" id="28"
+                        >
+                    </div>
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="2">Email<span style="color: red;">*</span></label>
+                        <input class="p-mb-2 p-mr-2" type="text" maxlength="30" pInputText placeholder="Email"
+                               [(ngModel)]="user.email" id="2" [ngClass]="{'ng-invalid ng-dirty' : !validEmailUser}"
+                        >
+                        <small class='p-error' *ngIf='!validEmailUser'>Email is required.</small>
+                    </div>
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="29">Login</label>
+                        <input class="p-mb-2 p-mr-2" type="text" maxlength="30" pInputText placeholder="login"
+                               [(ngModel)]="user.username" id="29"
+                        >
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="Password">Password</label>
+                        <input class="p-mb-2 p-mr-2" type="password"  pPassword placeholder="Password"
+                               [(ngModel)]="user.password" id="Password"
+                        >
+                    </div>
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="ConfirmPassword">Confirm Password</label>
+                        <input class="p-mb-2 p-mr-2" type="password"  pPassword placeholder="Password"
+                             [(ngModel)]="passwordConfirme" id="ConfirmPassword"  [ngClass]="{'ng-invalid ng-dirty' : !confirmPassword}"
+                        >
+                        <small class='p-error' *ngIf='!confirmPassword'>mot de passe invalide</small>
+
+                    </div>
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="roles">Role</label>
+                        <p-dropdown [(ngModel)]="user?.roles[0]" [options]="roles" placeholder="role" optionLabel="authority" id="roles">
+                        </p-dropdown>
+                    </div>
+
+
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Cancel" icon="pi pi-times" (click)="hideDialog()"></button>
+        <button pButton pRipple label="{{'Enregistrer'}}" icon="pi pi-check"
+                (click)="saveUser(false)"></button>
+
+    </ng-template>
+
+
+</p-dialog>
+
+

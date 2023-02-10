@@ -1,0 +1,138 @@
+<p-dialog [(visible)]="createPaymentDialog" [draggable]="false"
+          [maximizable]="true" [modal]="true"
+          [resizable]="false" [style]="{width: '70vw'}" header="Payment" styleClass="p-fluid">
+
+
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="Payment">
+                <div class="p-grid">
+
+
+                    <div class="p-field p-col-11 p-md-5">
+                        <label for="6">Previous Number<span style="color: red;">*</span></label>
+                        <p-inputNumber [(ngModel)]="selectedPayment.previousNumber" id="6"
+                                       placeholder="previousNumber"
+                                       [ngClass]="{'ng-invalid ng-dirty' : !validPaymentPreviousNumber}">
+                        </p-inputNumber>
+                        <small class='p-error' *ngIf='!validPaymentPreviousNumber'>Previous Number is required.</small>
+                    </div>
+
+                    <div class="p-field p-col-11 p-md-5">
+                        <label for="6">New Number<span style="color: red;">*</span></label>
+                        <p-inputNumber [(ngModel)]="selectedPayment.newNumber" id="6"
+                                       placeholder="newNumber"
+                                       [ngClass]="{'ng-invalid ng-dirty' : !validPaymentNewNumber}">
+                        </p-inputNumber>
+                        <small class='p-error' *ngIf='!validPaymentNewNumber'>New Number is required.</small>
+                    </div>
+
+                    <div *ngIf="showTotalPayAndConsumptionRate" class="p-field p-col-11 p-md-5">
+                        <label for="6">Consumption Rate<span style="color: red;">*</span></label>
+                        <p-inputNumber [(ngModel)]="selectedPayment.consumptionRate" id="6"
+                        >
+                        </p-inputNumber>
+                    </div>
+
+                    <div *ngIf="showTotalPayAndConsumptionRate" class="p-field p-col-11 p-md-5">
+                        <label for="6">Total Pay<span
+                                style="color: red;">*</span></label>
+                        <p-inputNumber [(ngModel)]="selectedPayment.totalPay"
+                                       id="6"
+                        >
+                        </p-inputNumber>
+                    </div>
+
+                    <div class="p-field p-col-11 p-md-5">
+                        <label for="1">Client<span style="color: red;">*</span></label>
+                        <p-dropdown [options]="clients" [(ngModel)]="selectedPayment.clientVo"
+                                    id="1" [filter]="true" filterMatchMode="contains"
+                                    [showClear]="true"
+                                    optionLabel="userName"
+                                    placeholder="Client"
+                                    [ngClass]="{'ng-invalid ng-dirty' : !validPaymentClient}">
+                        </p-dropdown>
+                        <small class='p-error' *ngIf='!validPaymentClient'>Client is required.</small>
+                    </div>
+                    <div class="p-col-1">
+                        <label></label>
+                        <button pButton pRipple type="button"
+                                icon="pi pi-plus" (click)="openCreateClient('client')"
+                                class="p-button-success one-colonne-btn-success-align"></button>
+                    </div>
+
+
+                    <div class="p-field p-col-11 p-md-5">
+                        <label for="1">Payment Category<span style="color: red;">*</span></label>
+                        <p-dropdown [options]="paymentCategorys" [(ngModel)]="selectedPayment.paymentCategoryVo"
+                                    id="1" [filter]="true" filterMatchMode="contains"
+                                    [showClear]="true"
+                                    optionLabel="code"
+                                    placeholder="PaymentCategory"
+                                    [ngClass]="{'ng-invalid ng-dirty' : !validPaymentPaymentCategory}">
+                        </p-dropdown>
+                        <small class='p-error' *ngIf='!validPaymentPaymentCategory'>Payment Category is required.</small>
+                    </div>
+                    <div class="p-col-1">
+                        <label></label>
+                        <button pButton pRipple type="button"
+                                icon="pi pi-plus" (click)="openCreatePaymentCategory('paymentCategory')"
+                                class="p-button-success one-colonne-btn-success-align"></button>
+                    </div>
+
+                    <div class="p-field p-col-11 p-md-5">
+                        <label for="1">Payment Status<span style="color: red;">*</span></label>
+                        <p-dropdown [options]="paymentStatuss" [(ngModel)]="selectedPayment.paymentStatusVo"
+                                    id="1" [filter]="true" filterMatchMode="contains"
+                                    [showClear]="true"
+                                    optionLabel="libel"
+                                    placeholder="PaymentStatus"
+                                    [ngClass]="{'ng-invalid ng-dirty' : !validPaymentPaymentStatus}">
+                        </p-dropdown>
+                        <small class='p-error' *ngIf='!validPaymentPaymentStatus'>PaymentStatus is required.</small>
+                    </div>
+                    <div class="p-col-1">
+                        <label></label>
+                        <button pButton pRipple type="button"
+                                icon="pi pi-plus" (click)="openCreatePaymentStatus('paymentStatus')"
+                                class="p-button-success one-colonne-btn-success-align"></button>
+                    </div>
+
+                    <div class="p-field p-col-12 p-md-6">
+                        <label for="3">Date Pay<span style="color: red;">*</span></label>
+                        <p-calendar [(ngModel)]="selectedPayment.datePay"
+                                    [ngClass]="{'ng-invalid ng-dirty' : !validPaymentDatePay}"
+                                    [showSeconds]="false"
+                                    [showTime]="true" dateFormat="{{dateFormat}}"
+                                    id="3"
+                                    placeholder="Date Pay">
+                        </p-calendar>
+                        <small *ngIf='!validPaymentDatePay' class='p-error'>Date Pay is required.</small>
+                    </div>
+
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <div class="p-grid">
+            <div>
+                <button (click)="hideCreateDialog()" class="p-button-text" icon="pi pi-times" label="Cancel"
+                        pButton pRipple></button>
+            </div>
+            <div>
+                <button (click)="save()" icon="pi pi-check" label="Validate" pButton pRipple
+                        ></button>
+            </div>
+        </div>
+    </ng-template>
+
+    <app-payment-category-create-admin></app-payment-category-create-admin>
+    <app-client-create-admin></app-client-create-admin>
+    <app-payment-status-create-admin></app-payment-status-create-admin>
+    <app-payment-category-create-admin></app-payment-category-create-admin>
+
+</p-dialog>

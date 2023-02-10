@@ -1,0 +1,161 @@
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+
+<div class="p-grid">
+    <div class="p-col-12">
+        <p-toast></p-toast>
+        <div class="card">
+            <p-toolbar styleClass="p-mb-4">
+                <ng-template pTemplate="left">
+                    <button (click)="openCreatePaymentCategory('paymentCategory')"
+                            class="p-button-success p-mr-2 p-mb-2"
+                            icon="pi pi-plus" label="New" pButton
+                            pRipple></button>
+
+
+                    <button (click)="this.findByCriteriaShow = !this.findByCriteriaShow"
+                            class="p-button-success p-mr-2 p-mb-2"
+                            icon="pi pi-{{findByCriteriaShow?'angle-down':'angle-right'}}"
+                            label="Search"
+                            pButton
+                            pRipple></button>
+                </ng-template>
+                <ng-template pTemplate="right">
+                    <div class="flex">
+                        <p-splitButton [model]="excelPdfButons" icon="pi pi-download" label="Exporter"
+                                       styleClass="p-button-help"></p-splitButton>
+                    </div>
+                </ng-template>
+
+            </p-toolbar>
+            <p-toolbar *ngIf="findByCriteriaShow">
+
+                <div class="align-form-search">
+                                <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchPaymentCategory.code" class="p-mr-2" id="1"
+                                           pInputText type="text">
+                                    <label for="1">Code</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchPaymentCategory.unityPrice" class="p-mr-2" id="1"
+                                           pInputText type="text">
+                                    <label for="1">Unity Price</label>
+                                </span>
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchPaymentCategory.dutyEngage" class="p-mr-2" id="1"
+                                           pInputText type="text">
+                                    <label for="1">Duty Engage</label>
+                                </span>
+                </div>
+
+                <div class="align-search-button">
+                    <button (click)="searchRequest()" class="p-button-info p-mr-2" icon="pi pi-sort-amount-down"
+                            label="Validate"
+                            pButton pRipple></button>
+                </div>
+            </p-toolbar>
+
+
+            <p-table #dt [(selection)]="selectedPaymentCategory" [columns]="cols"
+                     [globalFilterFields]="['Code','UnityPrice','DutyEngage']"
+                     [paginator]="true"
+                     [rowHover]="true"
+                     [rowsPerPageOptions]="[8,25,50]"
+                     [rows]="8" [showCurrentPageReport]="true" [value]="paymentCategorys"
+                     currentPageReportTemplate="Les éléments de {first} à {last} sur {totalRecords} "
+                     dataKey="id" styleClass="p-datatable-customers">
+                <ng-template pTemplate="caption">
+                    <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                        <h5 class="p-m-0">List of paymentCategorys</h5>
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-search"></i>
+                            <input (input)="dt.filterGlobal($event.target.value, 'contains')" pInputText
+                                   placeholder="Search..."
+                                   type="text"/>
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 3rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+
+                        <th pSortableColumn="Code">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Code</span>
+                                <p-sortIcon field="Code"></p-sortIcon>
+                                <p-columnFilter class="ml-auto" display="menu" field="paymentCategory.code"
+                                                type="text"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th pSortableColumn="Unity Price">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Unity Price</span>
+                                <p-sortIcon field="UnityPrice"></p-sortIcon>
+                                <p-columnFilter class="ml-auto" display="menu" field="paymentCategory.unityPrice"
+                                                type="text"></p-columnFilter>
+                            </div>
+                        </th>
+                        <th pSortableColumn="Duty Engage">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Duty Engage</span>
+                                <p-sortIcon field="DutyEngage"></p-sortIcon>
+                                <p-columnFilter class="ml-auto" display="menu" field="paymentCategory.dutyEngage"
+                                                type="text"></p-columnFilter>
+                            </div>
+                        </th>
+
+
+                        <th>Actions</th>
+                    </tr>
+                </ng-template>
+                <ng-template let-paymentCategory pTemplate="body">
+                    <tr>
+
+
+                        <td>
+                            <p-tableCheckbox [value]="paymentCategory"></p-tableCheckbox>
+                        </td>
+
+                        <td>{{paymentCategory.code}}</td>
+                        <td>{{paymentCategory.unityPrice}}</td>
+                        <td>{{paymentCategory.dutyEngage}}</td>
+
+                        <td>
+                            <button (click)="editPaymentCategory(paymentCategory)"
+                                    class="p-button-rounded p-button-success p-mr-2"
+                                    icon="pi pi-pencil"
+                                    pButton
+                                    pRipple></button>
+                            <button (click)="viewPaymentCategory(paymentCategory)"
+                                    class="p-button-rounded p-button-info p-mr-2"
+                                    icon="pi pi-list" pButton
+                                    pRipple></button>
+                            <button (click)="deletePaymentCategory(paymentCategory)"
+                                    class="p-button-rounded p-button-danger p-mr-2"
+                                    icon="pi pi-trash" pButton
+                                    pRipple></button>
+
+                            <button (click)="duplicatePaymentCategory(paymentCategory)"
+                                    class="p-button-rounded p-button-raised p-button-warning" icon="pi pi-copy"
+                                    pButton
+                                    pRipple></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="summary">
+                    <div class="p-d-flex p-ai-center p-jc-between">
+                        En totale
+                        il {{paymentCategorys ? paymentCategorys.length == 1 ? 'y a' : 'y a' : 'y a' }} {{paymentCategorys ? paymentCategorys.length : 0 }} {{paymentCategorys ? paymentCategorys.length == 1 ? 'paymentCategory' : 'paymentCategorys' : 0 }}
+                        .
+                    </div>
+                </ng-template>
+            </p-table>
+        </div>
+
+        <app-payment-category-create-admin></app-payment-category-create-admin>
+        <app-payment-category-edit-admin></app-payment-category-edit-admin>
+        <app-payment-category-view-admin></app-payment-category-view-admin>
+        <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+    </div>
+</div>

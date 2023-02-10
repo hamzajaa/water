@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg height="80px" version="1.1" viewBox="0 0 100 80" width="100px" xmlns="http://www.w3.org/2000/svg"
+>
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>teal</title>
+    <desc>Created with Sketch.</desc>
+    <g fill="none" fill-rule="evenodd" id="Dashboard" stroke="none" stroke-width="1">
+        <g fill="#4EA279" fill-rule="nonzero"
+           id="Dashboard-/-Default-/-Theme-Switcher-/-Menu" transform="translate(-995.000000, -662.000000)">
+            <g id="theme-options" transform="translate(321.000000, 285.000000)">
+                <g id="options" transform="translate(0.000000, 97.000000)">
+                    <rect height="80" id="teal" width="100" x="674" y="280"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

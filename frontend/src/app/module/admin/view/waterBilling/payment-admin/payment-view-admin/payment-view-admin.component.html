@@ -1,0 +1,102 @@
+<p-dialog [(visible)]="viewPaymentDialog" [modal]="true"
+          [style]="{width: '70vw'}" header=""
+          styleClass="p-fluid">
+
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="">
+                <div class="p-grid">
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="5">Previous Number</label>
+                        <input [(ngModel)]="selectedPayment.previousNumber" [disabled]="true" autofocus
+                               class="p-mb-2 p-mr-2" id="5"
+                               pInputText placeholder="PreviousNumber"
+                               type="text">
+                    </div>
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="5">New Number</label>
+                        <input [(ngModel)]="selectedPayment.newNumber" [disabled]="true" autofocus
+                               class="p-mb-2 p-mr-2" id="5"
+                               pInputText placeholder="NewNumber"
+                               type="text">
+                    </div>
+                    
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="5">Consumption Rate</label>
+                        <input [(ngModel)]="selectedPayment.consumptionRate" [disabled]="true" autofocus
+                               class="p-mb-2 p-mr-2" id="5"
+                               pInputText placeholder="ConsumptionRate"
+                               type="text">
+                    </div>
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="5">Total Pay</label>
+                        <input [(ngModel)]="selectedPayment.totalPay" [disabled]="true" autofocus
+                               class="p-mb-2 p-mr-2" id="5"
+                               pInputText placeholder="TotalPay"
+                               type="text">
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-6">
+                        <label for="1">Client</label>
+                        <p-dropdown [(ngModel)]="selectedPayment.clientVo" [disabled]="true"
+                                    [filter]="true" [options]="clients" [showClear]="true"
+                                    filterMatchMode="contains" id="1"
+                                    optionLabel="userName"
+                                    placeholder="Client">
+                        </p-dropdown>
+                    </div>
+
+                    <div class="p-field p-col-12 p-md-6">
+                        <label for="1">Payment Category</label>
+                        <p-dropdown [(ngModel)]="selectedPayment.paymentCategoryVo" [disabled]="true"
+                                    [filter]="true" [options]="paymentCategorys" [showClear]="true"
+                                    filterMatchMode="contains" id="1"
+                                    optionLabel="code"
+                                    placeholder="PaymentCategory">
+                        </p-dropdown>
+                    </div>
+
+                    <div class="p-field p-col-12 p-md-6">
+                        <label for="1">Payment Status</label>
+                        <p-dropdown [(ngModel)]="selectedPayment.paymentStatusVo" [disabled]="true"
+                                    [filter]="true" [options]="paymentStatuss" [showClear]="true"
+                                    filterMatchMode="contains" id="1"
+                                    optionLabel="libel"
+                                    placeholder="PaymentStatus">
+                        </p-dropdown>
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-6">
+                        <label for="2">Date Pay</label>
+                        <p-calendar [(ngModel)]="selectedPayment.datePay" [disabled]="true" [showSeconds]="false"
+                                    [showTime]="true"
+                                    dateFormat="{{dateFormat}}" id="2"
+                                    placeholder="Date Pay"></p-calendar>
+                    </div>
+
+
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <div class="p-grid">
+            <div>
+                <button (click)="hideViewDialog()" class="p-button-text" icon="pi pi-times" label="Cancel"
+                        pButton pRipple></button>
+            </div>
+        </div>
+    </ng-template>
+
+
+</p-dialog>
+
+
+

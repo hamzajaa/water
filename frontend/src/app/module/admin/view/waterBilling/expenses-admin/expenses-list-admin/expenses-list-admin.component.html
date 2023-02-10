@@ -1,0 +1,182 @@
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+<div class="p-grid">
+    <div class="p-col-12">
+        <p-toast></p-toast>
+        <div class="card">
+            <p-toolbar styleClass="p-mb-4">
+                <ng-template pTemplate="left">
+                    <button (click)="openCreateExpenses('expenses')" class="p-button-success p-mr-2 p-mb-2"
+                            icon="pi pi-plus" label="New" pButton
+                            pRipple></button>
+
+
+                    <button (click)="this.findByCriteriaShow = !this.findByCriteriaShow"
+                            class="p-button-success p-mr-2 p-mb-2"
+                            icon="pi pi-{{findByCriteriaShow?'angle-down':'angle-right'}}"
+                            label="Search"
+                            pButton
+                            pRipple></button>
+                </ng-template>
+                <ng-template pTemplate="right">
+                    <div class="flex">
+                        <p-splitButton [model]="excelPdfButons" icon="pi pi-download" label="Exporter"
+                                       styleClass="p-button-help"></p-splitButton>
+                    </div>
+                </ng-template>
+
+            </p-toolbar>
+            <p-toolbar *ngIf="findByCriteriaShow">
+
+                       <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchExpenses.title" class="p-mr-2" id="5"
+                                           pInputText type="text">
+                                    <label for="5">Title</label>
+                                </span>
+                <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                    <input [(ngModel)]="searchExpenses.amount" class="p-mr-2" id="6"
+                                           pInputText type="text">
+                                    <label for="6">Amount</label>
+                                </span>
+
+                <div class="align-form-search">
+                            <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                                <p-dropdown [(ngModel)]="searchExpenses.expensesCategoryVo" [filter]="true"
+                                            [options]="expensesCategorys"
+                                            [showClear]="true" id="1" optionLabel="name"
+                                            placeholder="ExpensesCategory">
+                                </p-dropdown>
+                            </span>
+
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                            <p-calendar
+                                    [(ngModel)]="searchExpenses.dateExpenseMin" class="p-mr-2"
+                                    dateFormat="dd-MM-yy"
+                                    id="2-1"></p-calendar>
+                            <label for="2-1">Date Expense Min</label>
+                        </span>
+
+                    <span class=" p-float-label p-mr-3 align-search-items p-mt-4">
+                            <p-calendar
+                                    [(ngModel)]="searchExpenses.dateExpenseMax" class="p-mr-2"
+                                    dateFormat="dd-MM-yy"
+                                    id="2-2"></p-calendar>
+                            <label for="2-2">Date Expense Max</label>
+                        </span>
+
+
+                    <div class="align-search-button">
+                        <button (click)="searchRequest()" class="p-button-info p-mr-2" icon="pi pi-sort-amount-down"
+                                label="Validate"
+                                pButton pRipple></button>
+                    </div>
+                </div>
+            </p-toolbar>
+
+
+            <p-table #dt [(selection)]="selectedExpenses" [columns]="cols"
+                     [globalFilterFields]="['title','amount','expensesCategoryVoname', 'dateExpense']"
+                     [paginator]="true"
+                     [rowHover]="true"
+                     [rowsPerPageOptions]="[8,25,50]"
+                     [rows]="8" [showCurrentPageReport]="true" [value]="expensess"
+                     currentPageReportTemplate="Les éléments de {first} à {last} sur {totalRecords} "
+                     dataKey="id" styleClass="p-datatable-customers">
+                <ng-template pTemplate="caption">
+                    <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                        <h5 class="p-m-0">List of expensess</h5>
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-search"></i>
+                            <input (input)="dt.filterGlobal($event.target.value, 'contains')" pInputText
+                                   placeholder="Search..."
+                                   type="text"/>
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 3rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+
+
+                        <th pSortableColumn="title">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Title</span>
+                                <p-sortIcon field="title"></p-sortIcon>
+                            </div>
+                        </th>
+
+                        <th pSortableColumn="amount">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Amount</span>
+                                <p-sortIcon field="amount"></p-sortIcon>
+                            </div>
+                        </th>
+                        <th pSortableColumn="expensesCategory">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Expenses Category</span>
+                                <p-sortIcon field="expensesCategory"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <th pSortableColumn="dateExpense">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Date Expense</span>
+                                <p-sortIcon field="dateExpense"></p-sortIcon>
+                            </div>
+                        </th>
+
+
+                        <th>Actions</th>
+                    </tr>
+                </ng-template>
+                <ng-template let-expenses pTemplate="body">
+                    <tr>
+                        <td>
+                            <p-tableCheckbox [value]="expenses"></p-tableCheckbox>
+                        </td>
+
+                        <td>{{expenses.title}}</td>
+
+                        <td>{{expenses.amount}}</td>
+
+                        <td>{{expenses.expensesCategoryVo?.name}}</td>
+
+                        <td>{{expenses.dateExpense | date :'dd/MM/yyyy HH:mm' }}</td>
+
+                        <td>
+                            <button (click)="editExpenses(expenses)" class="p-button-rounded p-button-success p-mr-2"
+                                    icon="pi pi-pencil"
+                                    pButton
+                                    pRipple></button>
+                            <button (click)="viewExpenses(expenses)" class="p-button-rounded p-button-info p-mr-2"
+                                    icon="pi pi-list" pButton
+                                    pRipple></button>
+                            <button (click)="deleteExpenses(expenses)" class="p-button-rounded p-button-danger p-mr-2"
+                                    icon="pi pi-trash" pButton
+                                    pRipple></button>
+
+                            <button (click)="duplicateExpenses(expenses)"
+                                    class="p-button-rounded p-button-raised p-button-warning" icon="pi pi-copy"
+                                    pButton
+                                    pRipple></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="summary">
+                    <div class="p-d-flex p-ai-center p-jc-between">
+                        En totale
+                        il {{expensess ? expensess.length == 1 ? 'y a' : 'y a' : 'y a' }} {{expensess ? expensess.length : 0 }} {{expensess ? expensess.length == 1 ? 'expenses' : 'expensess' : 0 }}
+                        .
+                    </div>
+                </ng-template>
+            </p-table>
+        </div>
+
+        <app-expenses-create-admin></app-expenses-create-admin>
+        <app-expenses-edit-admin></app-expenses-edit-admin>
+        <app-expenses-view-admin></app-expenses-view-admin>
+        <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+    </div>
+</div>

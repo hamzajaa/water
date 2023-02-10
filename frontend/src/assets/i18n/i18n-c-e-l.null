@@ -1,0 +1,1064 @@
+{
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des cause ko oks': 'Liste des cause ko oks',
+    'Search...': 'Search...',
+    'Cause ko ok': 'Cause ko ok',
+
+
+        'Id': 'Id',
+            'Code': 'Code',
+
+        'Code': 'Code',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des template email ftls': 'Liste des template email ftls',
+    'Search...': 'Search...',
+    'Template email ftl': 'Template email ftl',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Objet': 'Objet',
+
+        'Objet': 'Objet',
+            'Corps': 'Corps',
+
+        'Corps': 'Corps',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des etat demande koscs': 'Liste des etat demande koscs',
+    'Search...': 'Search...',
+    'Etat demande kosc': 'Etat demande kosc',
+
+
+        'Id': 'Id',
+            'Code': 'Code',
+
+        'Code': 'Code',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des template email mauvais contacts': 'Liste des template email mauvais contacts',
+    'Search...': 'Search...',
+    'Template email mauvais contact': 'Template email mauvais contact',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Objet': 'Objet',
+
+        'Objet': 'Objet',
+            'Corps': 'Corps',
+
+        'Corps': 'Corps',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des chercheurs': 'Liste des chercheurs',
+    'Search...': 'Search...',
+    'Chercheur': 'Chercheur',
+
+
+        'Id': 'Id',
+            'Numero matricule': 'Numero matricule',
+
+        'Numero matricule': 'Numero matricule',
+            'Role': 'Role',
+
+        'Role': 'Role',
+            'Credentials non expired': 'Credentials non expired',
+
+        'Credentials non expired': 'Credentials non expired',
+            'Enabled': 'Enabled',
+
+        'Enabled': 'Enabled',
+            'Account non expired': 'Account non expired',
+
+        'Account non expired': 'Account non expired',
+            'Account non locked': 'Account non locked',
+
+        'Account non locked': 'Account non locked',
+            'Password changed': 'Password changed',
+
+        'Password changed': 'Password changed',
+            'Created at': 'Created at',
+
+        'Created at': 'Created at',
+            'Updated at': 'Updated at',
+
+        'Updated at': 'Updated at',
+            'Username': 'Username',
+
+        'Username': 'Username',
+            'Password': 'Password',
+
+        'Password': 'Password',
+            'Prenom': 'Prenom',
+
+        'Prenom': 'Prenom',
+            'Nom': 'Nom',
+
+        'Nom': 'Nom',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des template email refus': 'Liste des template email refus',
+    'Search...': 'Search...',
+    'Template email refus': 'Template email refus',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Objet': 'Objet',
+
+        'Objet': 'Objet',
+            'Corps': 'Corps',
+
+        'Corps': 'Corps',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des techniciens': 'Liste des techniciens',
+    'Search...': 'Search...',
+    'Technicien': 'Technicien',
+
+
+        'Id': 'Id',
+            'Cell phone': 'Cell phone',
+
+        'Cell phone': 'Cell phone',
+            'Email': 'Email',
+
+        'Email': 'Email',
+            'Email attachement': 'Email attachement',
+
+        'Email attachement': 'Email attachement',
+            'Entreprise': 'Entreprise',
+
+        'Entreprise': 'Entreprise',
+            'Identifiant': 'Identifiant',
+
+        'Identifiant': 'Identifiant',
+            'Mot passe': 'Mot passe',
+
+        'Mot passe': 'Mot passe',
+            'Adresse ont': 'Adresse ont',
+
+        'Adresse ont': 'Adresse ont',
+            'Credentials non expired': 'Credentials non expired',
+
+        'Credentials non expired': 'Credentials non expired',
+            'Enabled': 'Enabled',
+
+        'Enabled': 'Enabled',
+            'Account non expired': 'Account non expired',
+
+        'Account non expired': 'Account non expired',
+            'Account non locked': 'Account non locked',
+
+        'Account non locked': 'Account non locked',
+            'Password changed': 'Password changed',
+
+        'Password changed': 'Password changed',
+            'Created at': 'Created at',
+
+        'Created at': 'Created at',
+            'Updated at': 'Updated at',
+
+        'Updated at': 'Updated at',
+            'Username': 'Username',
+
+        'Username': 'Username',
+            'Password': 'Password',
+
+        'Password': 'Password',
+            'Prenom': 'Prenom',
+
+        'Prenom': 'Prenom',
+            'Nom': 'Nom',
+
+        'Nom': 'Nom',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des source replanifications': 'Liste des source replanifications',
+    'Search...': 'Search...',
+    'Source replanification': 'Source replanification',
+
+
+        'Id': 'Id',
+            'Code': 'Code',
+
+        'Code': 'Code',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des template email confirmation clients': 'Liste des template email confirmation clients',
+    'Search...': 'Search...',
+    'Template email confirmation client': 'Template email confirmation client',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Objet': 'Objet',
+
+        'Objet': 'Objet',
+            'Corps': 'Corps',
+
+        'Corps': 'Corps',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des template email replanifications': 'Liste des template email replanifications',
+    'Search...': 'Search...',
+    'Template email replanification': 'Template email replanification',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Objet': 'Objet',
+
+        'Objet': 'Objet',
+            'Corps': 'Corps',
+
+        'Corps': 'Corps',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des template email clotures': 'Liste des template email clotures',
+    'Search...': 'Search...',
+    'Template email cloture': 'Template email cloture',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Objet': 'Objet',
+
+        'Objet': 'Objet',
+            'Corps': 'Corps',
+
+        'Corps': 'Corps',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des template email client injoinable koscs': 'Liste des template email client injoinable koscs',
+    'Search...': 'Search...',
+    'Template email client injoinable kosc': 'Template email client injoinable kosc',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Objet': 'Objet',
+
+        'Objet': 'Objet',
+            'Corps': 'Corps',
+
+        'Corps': 'Corps',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des template email planifications': 'Liste des template email planifications',
+    'Search...': 'Search...',
+    'Template email planification': 'Template email planification',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Objet': 'Objet',
+
+        'Objet': 'Objet',
+            'Corps': 'Corps',
+
+        'Corps': 'Corps',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des arret travails': 'Liste des arret travails',
+    'Search...': 'Search...',
+    'Arret travail': 'Arret travail',
+
+
+        'Id': 'Id',
+            'Technicien': 'Technicien',
+
+        'Technicien': 'Technicien',
+            'Date debut': 'Date debut',
+
+        'Date debut': 'Date debut',
+            'Date fin': 'Date fin',
+
+        'Date fin': 'Date fin',
+            'Raison arret travail': 'Raison arret travail',
+
+        'Raison arret travail': 'Raison arret travail',
+            'Comment': 'Comment',
+
+        'Comment': 'Comment',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des departements': 'Liste des departements',
+    'Search...': 'Search...',
+    'Departement': 'Departement',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Code': 'Code',
+
+        'Code': 'Code',
+            'Region': 'Region',
+
+        'Region': 'Region',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des raison arret travails': 'Liste des raison arret travails',
+    'Search...': 'Search...',
+    'Raison arret travail': 'Raison arret travail',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Code': 'Code',
+
+        'Code': 'Code',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des template email reports': 'Liste des template email reports',
+    'Search...': 'Search...',
+    'Template email report': 'Template email report',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Objet': 'Objet',
+
+        'Objet': 'Objet',
+            'Corps': 'Corps',
+
+        'Corps': 'Corps',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des template suivis': 'Liste des template suivis',
+    'Search...': 'Search...',
+    'Template suivi': 'Template suivi',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Objet': 'Objet',
+
+        'Objet': 'Objet',
+            'Corps': 'Corps',
+
+        'Corps': 'Corps',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des departement techniciens': 'Liste des departement techniciens',
+    'Search...': 'Search...',
+    'Departement technicien': 'Departement technicien',
+
+
+        'Id': 'Id',
+            'Technicien': 'Technicien',
+
+        'Technicien': 'Technicien',
+            'Departement': 'Departement',
+
+        'Departement': 'Departement',
+            'Date debut': 'Date debut',
+
+        'Date debut': 'Date debut',
+            'Date fin': 'Date fin',
+
+        'Date fin': 'Date fin',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des template email client injoinables': 'Liste des template email client injoinables',
+    'Search...': 'Search...',
+    'Template email client injoinable': 'Template email client injoinable',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Objet': 'Objet',
+
+        'Objet': 'Objet',
+            'Corps': 'Corps',
+
+        'Corps': 'Corps',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des regions': 'Liste des regions',
+    'Search...': 'Search...',
+    'Region': 'Region',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Code': 'Code',
+
+        'Code': 'Code',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des operators': 'Liste des operators',
+    'Search...': 'Search...',
+    'Operator': 'Operator',
+
+
+        'Id': 'Id',
+            'Reference': 'Reference',
+
+        'Reference': 'Reference',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des template email cris': 'Liste des template email cris',
+    'Search...': 'Search...',
+    'Template email cri': 'Template email cri',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Objet': 'Objet',
+
+        'Objet': 'Objet',
+            'Corps': 'Corps',
+
+        'Corps': 'Corps',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des entreprises': 'Liste des entreprises',
+    'Search...': 'Search...',
+    'Entreprise': 'Entreprise',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Code': 'Code',
+
+        'Code': 'Code',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des ordre koscs': 'Liste des ordre koscs',
+    'Search...': 'Search...',
+    'Ordre kosc': 'Ordre kosc',
+
+
+        'Id': 'Id',
+            'Reference': 'Reference',
+
+        'Reference': 'Reference',
+            'Reference work order': 'Reference work order',
+
+        'Reference work order': 'Reference work order',
+            'Code decharge': 'Code decharge',
+
+        'Code decharge': 'Code decharge',
+            'Supplier service code': 'Supplier service code',
+
+        'Supplier service code': 'Supplier service code',
+            'Date debut traitement': 'Date debut traitement',
+
+        'Date debut traitement': 'Date debut traitement',
+            'End custumor name': 'End custumor name',
+
+        'End custumor name': 'End custumor name',
+            'End custumor siret': 'End custumor siret',
+
+        'End custumor siret': 'End custumor siret',
+            'End custumor first name': 'End custumor first name',
+
+        'End custumor first name': 'End custumor first name',
+            'End custumor last name': 'End custumor last name',
+
+        'End custumor last name': 'End custumor last name',
+            'End custumor zipcode': 'End custumor zipcode',
+
+        'End custumor zipcode': 'End custumor zipcode',
+            'End custumor street name': 'End custumor street name',
+
+        'End custumor street name': 'End custumor street name',
+            'End custumor street number': 'End custumor street number',
+
+        'End custumor street number': 'End custumor street number',
+            'End custumor city': 'End custumor city',
+
+        'End custumor city': 'End custumor city',
+            'End custumor building': 'End custumor building',
+
+        'End custumor building': 'End custumor building',
+            'End custumor stairs': 'End custumor stairs',
+
+        'End custumor stairs': 'End custumor stairs',
+            'End custumor floor': 'End custumor floor',
+
+        'End custumor floor': 'End custumor floor',
+            'End custumor contact first name': 'End custumor contact first name',
+
+        'End custumor contact first name': 'End custumor contact first name',
+            'End custumor contact last name': 'End custumor contact last name',
+
+        'End custumor contact last name': 'End custumor contact last name',
+            'End custumor contact phone': 'End custumor contact phone',
+
+        'End custumor contact phone': 'End custumor contact phone',
+            'End custumor contact cell phone': 'End custumor contact cell phone',
+
+        'End custumor contact cell phone': 'End custumor contact cell phone',
+            'End custumor contact email': 'End custumor contact email',
+
+        'End custumor contact email': 'End custumor contact email',
+            'Operator': 'Operator',
+
+        'Operator': 'Operator',
+            'Company': 'Company',
+
+        'Company': 'Company',
+            'Referen dossier': 'Referen dossier',
+
+        'Referen dossier': 'Referen dossier',
+            'Submission date': 'Submission date',
+
+        'Submission date': 'Submission date',
+            'Coordonne pbo y': 'Coordonne pbo y',
+
+        'Coordonne pbo y': 'Coordonne pbo y',
+            'Hauteur pbo': 'Hauteur pbo',
+
+        'Hauteur pbo': 'Hauteur pbo',
+            'Type materiel pbo': 'Type materiel pbo',
+
+        'Type materiel pbo': 'Type materiel pbo',
+            'Type pbo': 'Type pbo',
+
+        'Type pbo': 'Type pbo',
+            'Condition syndics': 'Condition syndics',
+
+        'Condition syndics': 'Condition syndics',
+            'Type racordement pbo pto': 'Type racordement pbo pto',
+
+        'Type racordement pbo pto': 'Type racordement pbo pto',
+            'Autre infos pbo pto': 'Autre infos pbo pto',
+
+        'Autre infos pbo pto': 'Autre infos pbo pto',
+            'Code acces immeuble': 'Code acces immeuble',
+
+        'Code acces immeuble': 'Code acces immeuble',
+            'Contacte immeuble': 'Contacte immeuble',
+
+        'Contacte immeuble': 'Contacte immeuble',
+            'Pma accessible': 'Pma accessible',
+
+        'Pma accessible': 'Pma accessible',
+            'Info obtention cle': 'Info obtention cle',
+
+        'Info obtention cle': 'Info obtention cle',
+            'Locale ipm': 'Locale ipm',
+
+        'Locale ipm': 'Locale ipm',
+            'Contacts syndic': 'Contacts syndic',
+
+        'Contacts syndic': 'Contacts syndic',
+            'Racordement long': 'Racordement long',
+
+        'Racordement long': 'Racordement long',
+            'Oc1': 'Oc1',
+
+        'Oc1': 'Oc1',
+            'Nom module pm1': 'Nom module pm1',
+
+        'Nom module pm1': 'Nom module pm1',
+            'Position module pm1': 'Position module pm1',
+
+        'Position module pm1': 'Position module pm1',
+            'Reference cable module pm1': 'Reference cable module pm1',
+
+        'Reference cable module pm1': 'Reference cable module pm1',
+            'Reference tube module pm1': 'Reference tube module pm1',
+
+        'Reference tube module pm1': 'Reference tube module pm1',
+            'Information fibre module pm1': 'Information fibre module pm1',
+
+        'Information fibre module pm1': 'Information fibre module pm1',
+            'Reference cable pbo1': 'Reference cable pbo1',
+
+        'Reference cable pbo1': 'Reference cable pbo1',
+            'Information tube pbo1': 'Information tube pbo1',
+
+        'Information tube pbo1': 'Information tube pbo1',
+            'Information fibre pbo1': 'Information fibre pbo1',
+
+        'Information fibre pbo1': 'Information fibre pbo1',
+            'Connecteur prise numero1': 'Connecteur prise numero1',
+
+        'Connecteur prise numero1': 'Connecteur prise numero1',
+            'Connecteur prise couleur1': 'Connecteur prise couleur1',
+
+        'Connecteur prise couleur1': 'Connecteur prise couleur1',
+            'Reserve1': 'Reserve1',
+
+        'Reserve1': 'Reserve1',
+            'Oc2': 'Oc2',
+
+        'Oc2': 'Oc2',
+            'Nom module pm2': 'Nom module pm2',
+
+        'Nom module pm2': 'Nom module pm2',
+            'Position module pm2': 'Position module pm2',
+
+        'Position module pm2': 'Position module pm2',
+            'Reference cable module pm2': 'Reference cable module pm2',
+
+        'Reference cable module pm2': 'Reference cable module pm2',
+            'Reference tube module pm2': 'Reference tube module pm2',
+
+        'Reference tube module pm2': 'Reference tube module pm2',
+            'Information fibre module pm2': 'Information fibre module pm2',
+
+        'Information fibre module pm2': 'Information fibre module pm2',
+            'Reference cable pbo2': 'Reference cable pbo2',
+
+        'Reference cable pbo2': 'Reference cable pbo2',
+            'Information tube pbo2': 'Information tube pbo2',
+
+        'Information tube pbo2': 'Information tube pbo2',
+            'Information fibre pbo2': 'Information fibre pbo2',
+
+        'Information fibre pbo2': 'Information fibre pbo2',
+            'Connecteur prise numero2': 'Connecteur prise numero2',
+
+        'Connecteur prise numero2': 'Connecteur prise numero2',
+            'Connecteur prise couleur2': 'Connecteur prise couleur2',
+
+        'Connecteur prise couleur2': 'Connecteur prise couleur2',
+            'Reserve2': 'Reserve2',
+
+        'Reserve2': 'Reserve2',
+            'Oc3': 'Oc3',
+
+        'Oc3': 'Oc3',
+            'Nom module pm3': 'Nom module pm3',
+
+        'Nom module pm3': 'Nom module pm3',
+            'Position module pm3': 'Position module pm3',
+
+        'Position module pm3': 'Position module pm3',
+            'Reference cable module pm3': 'Reference cable module pm3',
+
+        'Reference cable module pm3': 'Reference cable module pm3',
+            'Reference tube module pm3': 'Reference tube module pm3',
+
+        'Reference tube module pm3': 'Reference tube module pm3',
+            'Information fibre module pm3': 'Information fibre module pm3',
+
+        'Information fibre module pm3': 'Information fibre module pm3',
+            'Reference cable pbo3': 'Reference cable pbo3',
+
+        'Reference cable pbo3': 'Reference cable pbo3',
+            'Information tube pbo3': 'Information tube pbo3',
+
+        'Information tube pbo3': 'Information tube pbo3',
+            'Information fibre pbo3': 'Information fibre pbo3',
+
+        'Information fibre pbo3': 'Information fibre pbo3',
+            'Connecteur prise numero3': 'Connecteur prise numero3',
+
+        'Connecteur prise numero3': 'Connecteur prise numero3',
+            'Connecteur prise couleur3': 'Connecteur prise couleur3',
+
+        'Connecteur prise couleur3': 'Connecteur prise couleur3',
+            'Reserve3': 'Reserve3',
+
+        'Reserve3': 'Reserve3',
+            'Oc4': 'Oc4',
+
+        'Oc4': 'Oc4',
+            'Nom module pm4': 'Nom module pm4',
+
+        'Nom module pm4': 'Nom module pm4',
+            'Position module pm4': 'Position module pm4',
+
+        'Position module pm4': 'Position module pm4',
+            'Reference cable module pm4': 'Reference cable module pm4',
+
+        'Reference cable module pm4': 'Reference cable module pm4',
+            'Reference tube module pm4': 'Reference tube module pm4',
+
+        'Reference tube module pm4': 'Reference tube module pm4',
+            'Information fibre module pm4': 'Information fibre module pm4',
+
+        'Information fibre module pm4': 'Information fibre module pm4',
+            'Reference cable pbo4': 'Reference cable pbo4',
+
+        'Reference cable pbo4': 'Reference cable pbo4',
+            'Information tube pbo4': 'Information tube pbo4',
+
+        'Information tube pbo4': 'Information tube pbo4',
+            'Information fibre pbo4': 'Information fibre pbo4',
+
+        'Information fibre pbo4': 'Information fibre pbo4',
+            'Connecteur prise numero4': 'Connecteur prise numero4',
+
+        'Connecteur prise numero4': 'Connecteur prise numero4',
+            'Connecteur prise couleur4': 'Connecteur prise couleur4',
+
+        'Connecteur prise couleur4': 'Connecteur prise couleur4',
+            'Reserve4': 'Reserve4',
+
+        'Reserve4': 'Reserve4',
+            'Departement': 'Departement',
+
+        'Departement': 'Departement',
+            'Technicien': 'Technicien',
+
+        'Technicien': 'Technicien',
+            'Pbo reel': 'Pbo reel',
+
+        'Pbo reel': 'Pbo reel',
+            'Numero serie ont': 'Numero serie ont',
+
+        'Numero serie ont': 'Numero serie ont',
+            'Hotline': 'Hotline',
+
+        'Hotline': 'Hotline',
+            'Mutation pbo': 'Mutation pbo',
+
+        'Mutation pbo': 'Mutation pbo',
+            'Work order type': 'Work order type',
+
+        'Work order type': 'Work order type',
+            'Product': 'Product',
+
+        'Product': 'Product',
+            'Provider': 'Provider',
+
+        'Provider': 'Provider',
+            'Provider file type': 'Provider file type',
+
+        'Provider file type': 'Provider file type',
+            'Spliter': 'Spliter',
+
+        'Spliter': 'Spliter',
+            'Existing otp': 'Existing otp',
+
+        'Existing otp': 'Existing otp',
+            'Profile': 'Profile',
+
+        'Profile': 'Profile',
+            'Provider sl id': 'Provider sl id',
+
+        'Provider sl id': 'Provider sl id',
+            'Reference prestation prise': 'Reference prestation prise',
+
+        'Reference prestation prise': 'Reference prestation prise',
+            'Reference pm': 'Reference pm',
+
+        'Reference pm': 'Reference pm',
+            'Reference pm technique': 'Reference pm technique',
+
+        'Reference pm technique': 'Reference pm technique',
+            'Localisation pm': 'Localisation pm',
+
+        'Localisation pm': 'Localisation pm',
+            'Provider product': 'Provider product',
+
+        'Provider product': 'Provider product',
+            'Reference pbo': 'Reference pbo',
+
+        'Reference pbo': 'Reference pbo',
+            'Localisation pbo': 'Localisation pbo',
+
+        'Localisation pbo': 'Localisation pbo',
+            'Reference prise': 'Reference prise',
+
+        'Reference prise': 'Reference prise',
+            'Date premier appel': 'Date premier appel',
+
+        'Date premier appel': 'Date premier appel',
+            'Date deuxieme appel': 'Date deuxieme appel',
+
+        'Date deuxieme appel': 'Date deuxieme appel',
+            'Date troisieme appel': 'Date troisieme appel',
+
+        'Date troisieme appel': 'Date troisieme appel',
+            'Date prise rdv': 'Date prise rdv',
+
+        'Date prise rdv': 'Date prise rdv',
+            'Date rdv': 'Date rdv',
+
+        'Date rdv': 'Date rdv',
+            'Date ouverture': 'Date ouverture',
+
+        'Date ouverture': 'Date ouverture',
+            'Commentaire client': 'Commentaire client',
+
+        'Commentaire client': 'Commentaire client',
+            'Commentaire kosc': 'Commentaire kosc',
+
+        'Commentaire kosc': 'Commentaire kosc',
+            'Template email planification': 'Template email planification',
+
+        'Template email planification': 'Template email planification',
+            'Objet planification': 'Objet planification',
+
+        'Objet planification': 'Objet planification',
+            'Corps planification': 'Corps planification',
+
+        'Corps planification': 'Corps planification',
+            'Envoye planification': 'Envoye planification',
+
+        'Envoye planification': 'Envoye planification',
+            'Date envoi planification': 'Date envoi planification',
+
+        'Date envoi planification': 'Date envoi planification',
+            'From planification': 'From planification',
+
+        'From planification': 'From planification',
+            'To planification': 'To planification',
+
+        'To planification': 'To planification',
+            'Date appel replanification': 'Date appel replanification',
+
+        'Date appel replanification': 'Date appel replanification',
+            'Template email report': 'Template email report',
+
+        'Template email report': 'Template email report',
+            'Objet report': 'Objet report',
+
+        'Objet report': 'Objet report',
+            'Corps report': 'Corps report',
+
+        'Corps report': 'Corps report',
+            'Envoye report': 'Envoye report',
+
+        'Envoye report': 'Envoye report',
+            'Date envoi report': 'Date envoi report',
+
+        'Date envoi report': 'Date envoi report',
+            'Template email replanification': 'Template email replanification',
+
+        'Template email replanification': 'Template email replanification',
+            'Objet replanification': 'Objet replanification',
+
+        'Objet replanification': 'Objet replanification',
+            'Corps replanification': 'Corps replanification',
+
+        'Corps replanification': 'Corps replanification',
+            'Envoye replanification': 'Envoye replanification',
+
+        'Envoye replanification': 'Envoye replanification',
+            'Date envoi replanification': 'Date envoi replanification',
+
+        'Date envoi replanification': 'Date envoi replanification',
+            'Template email refus': 'Template email refus',
+
+        'Template email refus': 'Template email refus',
+            'Objet refus': 'Objet refus',
+
+        'Objet refus': 'Objet refus',
+            'Corps refus': 'Corps refus',
+
+        'Corps refus': 'Corps refus',
+            'From refus': 'From refus',
+
+        'From refus': 'From refus',
+            'To refus': 'To refus',
+
+        'To refus': 'To refus',
+            'Envoye refus': 'Envoye refus',
+
+        'Envoye refus': 'Envoye refus',
+            'Date envoi refus': 'Date envoi refus',
+
+        'Date envoi refus': 'Date envoi refus',
+            'Template email mauvais contact': 'Template email mauvais contact',
+
+        'Template email mauvais contact': 'Template email mauvais contact',
+            'Objet mauvais contact': 'Objet mauvais contact',
+
+        'Objet mauvais contact': 'Objet mauvais contact',
+            'Corps mauvais contact': 'Corps mauvais contact',
+
+        'Corps mauvais contact': 'Corps mauvais contact',
+            'From mauvais contact': 'From mauvais contact',
+
+        'From mauvais contact': 'From mauvais contact',
+            'To mauvais contact': 'To mauvais contact',
+
+        'To mauvais contact': 'To mauvais contact',
+            'Envoye mauvais contact': 'Envoye mauvais contact',
+
+        'Envoye mauvais contact': 'Envoye mauvais contact',
+            'Date envoi mauvais contact': 'Date envoi mauvais contact',
+
+        'Date envoi mauvais contact': 'Date envoi mauvais contact',
+            'Template email confirmation client': 'Template email confirmation client',
+
+        'Template email confirmation client': 'Template email confirmation client',
+            'Objet confirmation client': 'Objet confirmation client',
+
+        'Objet confirmation client': 'Objet confirmation client',
+            'Corps confirmation client': 'Corps confirmation client',
+
+        'Corps confirmation client': 'Corps confirmation client',
+            'From confirmation client': 'From confirmation client',
+
+        'From confirmation client': 'From confirmation client',
+            'To confirmation client': 'To confirmation client',
+
+        'To confirmation client': 'To confirmation client',
+            'Envoye confirmation client': 'Envoye confirmation client',
+
+        'Envoye confirmation client': 'Envoye confirmation client',
+            'Date envoi confirmation client': 'Date envoi confirmation client',
+
+        'Date envoi confirmation client': 'Date envoi confirmation client',
+            'Template email cri': 'Template email cri',
+
+        'Template email cri': 'Template email cri',
+            'Objet cri': 'Objet cri',
+
+        'Objet cri': 'Objet cri',
+            'Corps cri': 'Corps cri',
+
+        'Corps cri': 'Corps cri',
+            'From cri': 'From cri',
+
+        'From cri': 'From cri',
+            'To cri': 'To cri',
+
+        'To cri': 'To cri',
+            'Envoye cri': 'Envoye cri',
+
+        'Envoye cri': 'Envoye cri',
+            'Date envoi cri': 'Date envoi cri',
+
+        'Date envoi cri': 'Date envoi cri',
+            'Template email ftl': 'Template email ftl',
+
+        'Template email ftl': 'Template email ftl',
+            'Objet ftl': 'Objet ftl',
+
+        'Objet ftl': 'Objet ftl',
+            'Corps ftl': 'Corps ftl',
+
+        'Corps ftl': 'Corps ftl',
+            'From ftl': 'From ftl',
+
+        'From ftl': 'From ftl',
+            'To ftl': 'To ftl',
+
+        'To ftl': 'To ftl',
+            'Envoye ftl': 'Envoye ftl',
+
+        'Envoye ftl': 'Envoye ftl',
+            'Date envoi ftl': 'Date envoi ftl',
+
+        'Date envoi ftl': 'Date envoi ftl',
+            'Date intervention technique debut': 'Date intervention technique debut',
+
+        'Date intervention technique debut': 'Date intervention technique debut',
+            'Date intervention technique fin': 'Date intervention technique fin',
+
+        'Date intervention technique fin': 'Date intervention technique fin',
+            'Template email client injoinable': 'Template email client injoinable',
+
+        'Template email client injoinable': 'Template email client injoinable',
+            'Objet client injoinable': 'Objet client injoinable',
+
+        'Objet client injoinable': 'Objet client injoinable',
+            'Corps client injoinable': 'Corps client injoinable',
+
+        'Corps client injoinable': 'Corps client injoinable',
+            'From client injoinable': 'From client injoinable',
+
+        'From client injoinable': 'From client injoinable',
+            'To client injoinable': 'To client injoinable',
+
+        'To client injoinable': 'To client injoinable',
+            'Envoye client injoinable': 'Envoye client injoinable',
+
+        'Envoye client injoinable': 'Envoye client injoinable',
+            'Date envoi client injoinable': 'Date envoi client injoinable',
+
+        'Date envoi client injoinable': 'Date envoi client injoinable',
+            'Template email client injoinable kosc': 'Template email client injoinable kosc',
+
+        'Template email client injoinable kosc': 'Template email client injoinable kosc',
+            'Objet client injoinable kosc': 'Objet client injoinable kosc',
+
+        'Objet client injoinable kosc': 'Objet client injoinable kosc',
+            'Corps client injoinable kosc': 'Corps client injoinable kosc',
+
+        'Corps client injoinable kosc': 'Corps client injoinable kosc',
+            'From client injoinable kosc': 'From client injoinable kosc',
+
+        'From client injoinable kosc': 'From client injoinable kosc',
+            'To client injoinable kosc': 'To client injoinable kosc',
+
+        'To client injoinable kosc': 'To client injoinable kosc',
+            'Envoye client injoinable kosc': 'Envoye client injoinable kosc',
+
+        'Envoye client injoinable kosc': 'Envoye client injoinable kosc',
+            'Date envoi client injoinable kosc': 'Date envoi client injoinable kosc',
+
+        'Date envoi client injoinable kosc': 'Date envoi client injoinable kosc',
+            'Commentaire technicien': 'Commentaire technicien',
+
+        'Commentaire technicien': 'Commentaire technicien',
+            'Commantaire cloture': 'Commantaire cloture',
+
+        'Commantaire cloture': 'Commantaire cloture',
+            'Etat demande kosc': 'Etat demande kosc',
+
+        'Etat demande kosc': 'Etat demande kosc',
+            'Template email cloture': 'Template email cloture',
+
+        'Template email cloture': 'Template email cloture',
+            'Objet cloture': 'Objet cloture',
+
+        'Objet cloture': 'Objet cloture',
+            'Corps cloture': 'Corps cloture',
+
+        'Corps cloture': 'Corps cloture',
+            'Envoye cloture': 'Envoye cloture',
+
+        'Envoye cloture': 'Envoye cloture',
+            'Date envoi cloture': 'Date envoi cloture',
+
+        'Date envoi cloture': 'Date envoi cloture',
+            'Email cloture piece joints': 'Email cloture piece joints',
+
+        'Email cloture piece joints': 'Email cloture piece joints',
+            'Template suivi': 'Template suivi',
+
+        'Template suivi': 'Template suivi',
+            'Objet suivi': 'Objet suivi',
+
+        'Objet suivi': 'Objet suivi',
+            'Corps suivi': 'Corps suivi',
+
+        'Corps suivi': 'Corps suivi',
+            'Envoye suivi': 'Envoye suivi',
+
+        'Envoye suivi': 'Envoye suivi',
+            'Date envoi suivi': 'Date envoi suivi',
+
+        'Date envoi suivi': 'Date envoi suivi',
+            'Cause ko ok': 'Cause ko ok',
+
+        'Cause ko ok': 'Cause ko ok',
+            'Source replanification': 'Source replanification',
+
+        'Source replanification': 'Source replanification',
+}
+
+

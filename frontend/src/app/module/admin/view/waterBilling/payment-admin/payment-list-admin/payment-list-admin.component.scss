@@ -1,0 +1,77 @@
+.btn-hex {
+  position: relative;
+  padding: 10px 15px;
+  font-size: 13px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #0f97c7;
+  border: 0;
+  overflow: hidden;
+  transition: 0.2s;
+}
+/*
+:host ::ng-deep .p-datatable .p-datatable-tbody > tr.danger > td {
+    background-color: palevioletred;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-tbody > tr.success > td {
+    background-color: green;
+}*/
+
+.btn-hex input[type="file"] {
+  cursor: pointer;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  transform: scale(5);
+  opacity: 0;
+}
+
+.btn-hex:hover {
+  background: #026da7;
+}
+
+
+.btn-rex{
+  position: relative;
+  padding: 6px 11px;
+  font-size: 13px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #9C27B0;
+  border: 0;
+  overflow: hidden;
+  transition: 0.2s;
+}
+.btn-rex input[type="file"]{
+  cursor: pointer;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  transform: scale(5);
+  opacity: 0;
+}
+.btn-rex:hover{
+  background: #7d1f8d;
+}
+
+.p-dialog .p-dialog-content {
+  background: #ffffff;
+  color: #495057;
+  padding: 0 1.5rem 2rem 1.5rem;
+}
+
+.my-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.38);
+  align-items: center;
+}

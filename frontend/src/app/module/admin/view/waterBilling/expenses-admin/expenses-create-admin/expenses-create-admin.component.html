@@ -1,0 +1,83 @@
+<p-dialog [(visible)]="createExpensesDialog" [draggable]="false"
+          [maximizable]="true" [modal]="true"
+          [resizable]="false" [style]="{width: '70vw'}" header="Expenses" styleClass="p-fluid">
+
+
+    <ng-template pTemplate="Expenses">
+        <p-tabView>
+            <p-tabPanel header="Expenses">
+                <div class="p-grid">
+
+                    <div class="p-field p-col-12 p-md-3">
+                        <label for="1">Title<span style="color: red;">*</span></label>
+                        <input class="p-mb-2 p-mr-2" type="text" pInputText
+                               placeholder="Title"
+                               id="1" [(ngModel)]="selectedExpenses.title"
+                               [ngClass]="{'ng-invalid ng-dirty' : !validExpensesTitle}"/>
+                        <small class='p-error' *ngIf='!validExpensesTitle'>Title is required.</small>
+                    </div>
+
+                    <div class="p-field p-col">
+                        <label for="6">Amount<span style="color: red;">*</span></label>
+                        <p-inputNumber [(ngModel)]="selectedExpenses.amount" id="6"
+                                       [ngClass]="{'ng-invalid ng-dirty' : !validExpensesAmount}"
+                        >
+                        </p-inputNumber>
+                        <small class='p-error' *ngIf='!validExpensesAmount'>Amount is required.</small>
+                    </div>
+
+                    <div class="p-field p-col-11 p-md-5">
+                        <label for="1">ExpensesCategory<span style="color: red;">*</span></label>
+                        <p-dropdown [options]="expensesCategorys" [(ngModel)]="selectedExpenses.expensesCategoryVo"
+                                    id="1" [filter]="true" filterMatchMode="contains"
+                                    [showClear]="true"
+                                    optionLabel="name"
+                                    placeholder="ExpensesCategory"
+                                    [ngClass]="{'ng-invalid ng-dirty' : !validExpensesExpensesCategory}">
+                        </p-dropdown>
+                        <small class='p-error' *ngIf='!validExpensesExpensesCategory'>ExpensesCategory is required.</small>
+                    </div>
+                    <div class="p-col-1">
+                        <label></label>
+                        <button pButton pRipple type="button"
+                                icon="pi pi-plus" (click)="openCreateExpensesCategory('expensesCategory')"
+                                class="p-button-success one-colonne-btn-success-align"></button>
+                    </div>
+
+
+                    <div class="p-field p-col-12 p-md-6">
+                        <label for="3">Date Expense<span style="color: red;">*</span></label>
+                        <p-calendar [(ngModel)]="selectedExpenses.dateExpense"
+                                    [ngClass]="{'ng-invalid ng-dirty' : !validExpensesDateExpense}"
+                                    [showSeconds]="false"
+                                    [showTime]="true" dateFormat="{{dateFormat}}"
+                                    id="3"
+                                    placeholder="Date Expense">
+                        </p-calendar>
+                        <small *ngIf='!validExpensesDateExpense' class='p-error'>DateExpense is required.</small>
+                    </div>
+
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <div class="p-grid">
+            <div>
+                <button (click)="hideCreateDialog()" class="p-button-text" icon="pi pi-times" label="Cancel"
+                        pButton pRipple></button>
+            </div>
+            <div>
+                <button (click)="save()" icon="pi pi-check" label="Validate" pButton pRipple
+                        ></button>
+            </div>
+        </div>
+    </ng-template>
+
+    <app-expenses-category-create-admin></app-expenses-category-create-admin>
+
+
+</p-dialog>
