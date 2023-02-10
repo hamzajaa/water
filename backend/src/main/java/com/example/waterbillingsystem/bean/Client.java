@@ -6,7 +6,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -27,5 +26,7 @@ public class Client {
     private String phone;
     private BigDecimal dutyEngagePrice;
     private String statusDutyEngagePrice;
+    private Boolean contractualObligation;
+
     private LocalDateTime recordDate;
 }

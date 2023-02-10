@@ -68,6 +68,18 @@
                         <small class='p-error' *ngIf='!validDutyEngagePrice'>Duty Engage Price is required.</small>
                     </div>
 
+                    <div class="p-field align-inputswitch p-col-12  p-md-3">
+                        <div class="label-inputswitch">
+                            <label for="39">Contractual Obligation</label>
+                        </div>
+                        <div class="input-switch">
+                            <p-inputSwitch [(ngModel)]="selectedClient.contractualObligation" id="39"
+                            >
+                            </p-inputSwitch>
+
+                        </div>
+                    </div>
+
                     <div class="p-field p-col-12 p-md-3">
                         <label for="5">Record Date<span style="color: red;">*</span></label>
                         <p-calendar [(ngModel)]="selectedClient.recordDate" [showSeconds]="false"

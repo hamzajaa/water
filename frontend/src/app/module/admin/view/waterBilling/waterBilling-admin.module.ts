@@ -85,6 +85,7 @@ import {ProgressSpinnerModule} from "primeng/progressspinner";
 import {BlockUIModule} from "primeng/blockui";
 import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
 import {ChartModule} from "primeng/chart";
+import {NgxSpinnerModule} from "ngx-spinner";
 
 
 @NgModule({
@@ -166,6 +167,7 @@ import {ChartModule} from "primeng/chart";
         BreadcrumbModule,
         FileUploadModule,
         ChartModule,
+        NgxSpinnerModule,
 
     ],
     exports: [

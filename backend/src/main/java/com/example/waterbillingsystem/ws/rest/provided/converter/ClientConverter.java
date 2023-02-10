@@ -41,7 +41,9 @@ public class ClientConverter extends AbstractConverter<Client, ClientVo> {
             if (StringUtil.isNotEmpty2(vo.getStatusDutyEngagePrice())) {
                 clientEntity.setStatusDutyEngagePrice(vo.getStatusDutyEngagePrice());
             }
-
+            if (StringUtil.isNotEmpty2(vo.getContractualObligation())) {
+                clientEntity.setContractualObligation(vo.getContractualObligation());
+            }
             if (StringUtil.isNotEmpty2(vo.getRecordDate())) {
                 clientEntity.setRecordDate(DateUtil.toDate(vo.getRecordDate()));
             }
@@ -81,6 +83,9 @@ public class ClientConverter extends AbstractConverter<Client, ClientVo> {
             }
             if (StringUtil.isNotEmpty2(entity.getStatusDutyEngagePrice())) {
                 clientVo.setStatusDutyEngagePrice(entity.getStatusDutyEngagePrice());
+            }
+            if (entity.getContractualObligation() != null) {
+                clientVo.setContractualObligation(entity.getContractualObligation());
             }
             if (entity.getRecordDate() != null) {
                 clientVo.setRecordDate(DateUtil.dateToString(entity.getRecordDate()));

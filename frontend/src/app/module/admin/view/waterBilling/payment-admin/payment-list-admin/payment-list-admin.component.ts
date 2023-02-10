@@ -14,8 +14,8 @@ import {PaymentStatusService} from "../../../../../../controller/service/Payment
 import {PaymentStatusVo} from "../../../../../../controller/model/PaymentStatus.model";
 import {PaymentCategoryService} from "../../../../../../controller/service/PaymentCategory.service";
 import {PaymentCategoryVo} from "../../../../../../controller/model/PaymentCategory.model";
-import {Observable} from "rxjs";
-import {HttpClient, HttpEventType, HttpHeaders, HttpRequest, HttpResponse} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {NgxSpinnerService} from "ngx-spinner";
 
 // import {PaymentExcelService} from "../../../../../../controller/service/PaymentExcel.service";
 
@@ -50,30 +50,18 @@ export class PaymentListAdminComponent {
         , private clientService: ClientService
         , private paymentStatusService: PaymentStatusService
         , private paymentCategoryService: PaymentCategoryService
-        , private http: HttpClient
-                // , private paymentExcelService: PaymentExcelService
+        , private spinner: NgxSpinnerService
     ) {
     }
 
-    uploadedFiles: any[] = [];
     displayImport = false;
     selectedFile: File;
 
     fileChange(event: any) {
-        this.showSpinner = true;
         this.selectedFile = event.target.files[0];
         const formData = new FormData();
         formData.append('file', this.selectedFile, this.selectedFile.name);
-        this.paymentService.importDataAll(formData).subscribe({
-            next: (event) => {
-                this.loadPayments();
-                this.showSpinner = false;
-            },
-            error: () => {
-                this.showSpinner = false
-            }
-        });
-
+        this.paymentService.importDataAll(formData);
     }
 
     async showDisplayImport() {
@@ -81,18 +69,20 @@ export class PaymentListAdminComponent {
     }
 
     async hideDisplayImport() {
+
         this.displayImport = false;
+
+        await this.spinner.show();
+
+        setTimeout(() => {
+            this.spinner.hide();
+        }, 2000);
+
     }
 
 
     // methods
     ngOnInit(): void {
-        this.loadPayments();
-        this.initExport();
-        this.initCol();
-        this.loadClient();
-        this.loadPaymentCategorys();
-        this.loadPaymentStatus();
 
         this.items = [
             {label: 'Payments', routerLink: '/app/admin/waterBilling/payment/list'},
@@ -100,13 +90,22 @@ export class PaymentListAdminComponent {
         ];
 
         this.home = {icon: 'pi pi-home', routerLink: '/'};
+
+        this.loadPayments();
+        this.initExport();
+        this.initCol();
+        this.loadClient();
+        this.loadPaymentCategorys();
+        this.loadPaymentStatus();
+
     }
 
     public async loadPayments() {
-        await this.roleService.findAll();
-        const isPermistted = await this.roleService.isPermitted('Payment', 'list');
-        isPermistted ? this.paymentService.findAll().subscribe(payments => this.payments = payments, error => console.log(error))
-            : this.messageService.add({severity: 'error', summary: 'error', detail: 'permission problem'});
+        // await this.roleService.findAll();
+        // const isPermistted = await this.roleService.isPermitted('Payment', 'list');
+        //  isPermistted ?
+        this.paymentService.findAll().subscribe(payments => this.payments = payments, error => console.log(error));
+        //    : this.messageService.add({severity: 'error', summary: 'error', detail: 'permission problem'});
     }
 
     public searchRequest() {

@@ -5,6 +5,7 @@ import {environment} from "../../../environments/environment";
 import {PaymentVo} from "../model/Payment.model";
 import {HttpClient, HttpEventType, HttpRequest, HttpResponse} from "@angular/common/http";
 import {error} from "protractor";
+import {NgxSpinnerService} from "ngx-spinner";
 
 @Injectable({
     providedIn: 'root'
@@ -15,7 +16,7 @@ export class PaymentService {
     private API = '';
     private role$: Observable<string>;
 
-    constructor(private http: HttpClient, private roleService: RoleService) {
+    constructor(private http: HttpClient, private roleService: RoleService, private spinner: NgxSpinnerService) {
         this.role$ = this.roleService.role$;
         this.role$.subscribe(role => {
             this.API = environment.apiUrl + role.toLowerCase() + '/payment/';
@@ -57,31 +58,8 @@ export class PaymentService {
         return this.http.get<PaymentVo>(this.API + 'detail/id/' + payment.id);
     }
 
-    showSpinner = false;
-
-    public importDataAll(formData: FormData):Observable<any> {
-       //
-       //  this.showSpinner = true;
-       //  const uploadReq = new HttpRequest('POST', 'http://localhost:8036/api/excel/upload', formData, {
-       //      reportProgress: true,
-       //  });
-       // this.http.request(uploadReq).subscribe(
-       //      {
-       //          next: (event) => {
-       //              if (event.type === HttpEventType.UploadProgress) {
-       //                  console.log(`Upload progress: ${Math.round(100 * event.loaded / event.total)}%`);
-       //              } else if (event instanceof HttpResponse) {
-       //                  console.log('File is completely uploaded!');
-       //              }
-       //              this.showSpinner = false;
-       //
-       //          },
-       //          error: () => {
-       //              this.showSpinner = false;
-       //          }
-       //      }
-       //  );
-       return this.http.post('http://localhost:8036/api/excel/upload',formData);
+    public  importDataAll(formData: FormData) {
+        return this.http.post('http://localhost:8036/api/excel/upload', formData);
     }
 
     // getters and setters

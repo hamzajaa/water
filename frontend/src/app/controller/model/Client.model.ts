@@ -8,6 +8,8 @@ export class ClientVo {
     public phone: String;
     public dutyEngagePrice: number;
     public statusDutyEngagePrice: String;
+    public contractualObligation: null | boolean;
+
     public recordDate: Date;
     public recordDateMin: String;
     public recordDateMax: String;

@@ -119,8 +119,8 @@
                             <div class="p-d-flex p-jc-between p-ai-center">
                                 <span>User Name</span>
                                 <p-sortIcon field="userName"></p-sortIcon>
-<!--                                <p-columnFilter class="ml-auto" display="menu" field="client.userName"-->
-<!--                                                type="text"></p-columnFilter>-->
+                                <!--                                <p-columnFilter class="ml-auto" display="menu" field="client.userName"-->
+                                <!--                                                type="text"></p-columnFilter>-->
                             </div>
                         </th>
 
@@ -129,8 +129,8 @@
                             <div class="p-d-flex p-jc-between p-ai-center">
                                 <span>Cni</span>
                                 <p-sortIcon field="cni"></p-sortIcon>
-<!--                                <p-columnFilter class="ml-auto" display="menu" field="client.cni"-->
-<!--                                                type="text"></p-columnFilter>-->
+                                <!--                                <p-columnFilter class="ml-auto" display="menu" field="client.cni"-->
+                                <!--                                                type="text"></p-columnFilter>-->
                             </div>
                         </th>
 
@@ -139,8 +139,8 @@
                             <div class="p-d-flex p-jc-between p-ai-center">
                                 <span>Address</span>
                                 <p-sortIcon field="address"></p-sortIcon>
-<!--                                <p-columnFilter class="ml-auto" display="menu" field="client.address"-->
-<!--                                                type="text"></p-columnFilter>-->
+                                <!--                                <p-columnFilter class="ml-auto" display="menu" field="client.address"-->
+                                <!--                                                type="text"></p-columnFilter>-->
                             </div>
                         </th>
 
@@ -148,8 +148,8 @@
                             <div class="p-d-flex p-jc-between p-ai-center">
                                 <span>Phone</span>
                                 <p-sortIcon field="phone"></p-sortIcon>
-<!--                                <p-columnFilter class="ml-auto" display="menu" field="client.phone"-->
-<!--                                                type="text"></p-columnFilter>-->
+                                <!--                                <p-columnFilter class="ml-auto" display="menu" field="client.phone"-->
+                                <!--                                                type="text"></p-columnFilter>-->
                             </div>
                         </th>
 
@@ -157,8 +157,8 @@
                             <div class="p-d-flex p-jc-between p-ai-center">
                                 <span>Counter Number</span>
                                 <p-sortIcon field="counterNumber"></p-sortIcon>
-<!--                                <p-columnFilter class="ml-auto" display="menu" field="client.counterNumber"-->
-<!--                                                type="text"></p-columnFilter>-->
+                                <!--                                <p-columnFilter class="ml-auto" display="menu" field="client.counterNumber"-->
+                                <!--                                                type="text"></p-columnFilter>-->
                             </div>
                         </th>
 
@@ -166,8 +166,8 @@
                             <div class="p-d-flex p-jc-between p-ai-center">
                                 <span>DutyEngage Price</span>
                                 <p-sortIcon field="dutyEngagePrice"></p-sortIcon>
-<!--                                <p-columnFilter class="ml-auto" display="menu" field="client.dutyEngagePrice"-->
-<!--                                                type="text"></p-columnFilter>-->
+                                <!--                                <p-columnFilter class="ml-auto" display="menu" field="client.dutyEngagePrice"-->
+                                <!--                                                type="text"></p-columnFilter>-->
                             </div>
                         </th>
 
@@ -175,8 +175,15 @@
                             <div class="p-d-flex p-jc-between p-ai-center">
                                 <span>Status DutyEngage Price</span>
                                 <p-sortIcon field="statusDutyEngagePrice"></p-sortIcon>
-<!--                                <p-columnFilter class="ml-auto" display="menu" field="client.statusDutyEngagePrice"-->
-<!--                                                type="text"></p-columnFilter>-->
+                                <!--                                <p-columnFilter class="ml-auto" display="menu" field="client.statusDutyEngagePrice"-->
+                                <!--                                                type="text"></p-columnFilter>-->
+                            </div>
+                        </th>
+
+                        <th pSortableColumn="contractualObligation">
+                            <div class="p-d-flex p-jc-between p-ai-center">
+                                <span>Contractual Obligation</span>
+                                <p-sortIcon field="contractualObligation"></p-sortIcon>
                             </div>
                         </th>
 
@@ -211,6 +218,8 @@
                         <td>{{client.dutyEngagePrice}}</td>
 
                         <td>{{client.statusDutyEngagePrice}}</td>
+
+                        <td>{{client.contractualObligation}}</td>
 
                         <td>{{client.recordDate | date :'dd/MM/yyyy HH:mm' }}</td>
 

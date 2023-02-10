@@ -41,7 +41,6 @@ public class PaymentImportExcelImpl implements PaymentImportExcelService {
             Sheet sheet = workbook.getSheetAt(0);
 
             // Iterate through each row in the sheet
-            List<Payment> paymentList = new ArrayList<>();
 
             for (int i = 1; i <= sheet.getLastRowNum(); i++) {
                 Row row = sheet.getRow(i);
@@ -105,7 +104,6 @@ public class PaymentImportExcelImpl implements PaymentImportExcelService {
 
 //                // Save data to the database
                 paymentService.save(payment);
-//                paymentList.add(payment);
             }
 //            paymentService.save(paymentList);
 
@@ -113,4 +111,5 @@ public class PaymentImportExcelImpl implements PaymentImportExcelService {
             e.printStackTrace();
         }
     }
+
 }

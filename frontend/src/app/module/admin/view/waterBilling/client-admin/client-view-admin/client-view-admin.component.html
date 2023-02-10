@@ -51,9 +51,23 @@
                                type="text">
                     </div>
 
+
+                    <div class="p-field align-inputswitch p-col-12  p-md-3">
+                        <div class="label-inputswitch">
+                            <label for="39">Contractual Obligation</label>
+                        </div>
+                        <div class="input-switch">
+                            <p-inputSwitch [(ngModel)]="selectedClient.contractualObligation" id="39" [disabled]="true"
+                            >
+                            </p-inputSwitch>
+
+                        </div>
+                    </div>
+
                     <div class="p-field p-col-12 p-md-3">
                         <label for="13">Record Date</label>
-                        <p-calendar [(ngModel)]="selectedClient.recordDate" [disabled]="true" [showSeconds]="false" [showTime]="true"
+                        <p-calendar [(ngModel)]="selectedClient.recordDate" [disabled]="true" [showSeconds]="false"
+                                    [showTime]="true"
                                     dateFormat="{{dateFormat}}" id="13"
                                     placeholder="Record Date"></p-calendar>
                     </div>
@@ -73,7 +87,6 @@
             </div>
         </div>
     </ng-template>
-
 
 
 </p-dialog>
