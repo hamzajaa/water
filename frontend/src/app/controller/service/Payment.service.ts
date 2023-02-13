@@ -58,8 +58,8 @@ export class PaymentService {
         return this.http.get<PaymentVo>(this.API + 'detail/id/' + payment.id);
     }
 
-    public  importDataAll(formData: FormData) {
-        return this.http.post('http://localhost:8036/api/excel/upload', formData);
+    public importDataAll(formData: FormData):Observable<Array<PaymentVo>> {
+        return this.http.post<Array<PaymentVo>>('http://localhost:8036/api/excel/upload', formData);
     }
 
     // getters and setters
