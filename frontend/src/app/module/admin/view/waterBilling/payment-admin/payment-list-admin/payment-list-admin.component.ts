@@ -46,38 +46,43 @@ export class PaymentListAdminComponent {
     home: MenuItem;
     showSpinner = false;
 
+
     constructor(private datePipe: DatePipe, private paymentService: PaymentService, private messageService: MessageService, private confirmationService: ConfirmationService, private roleService: RoleService, private router: Router, private authService: AuthService, private exportService: ExportService
         , private clientService: ClientService
         , private paymentStatusService: PaymentStatusService
         , private paymentCategoryService: PaymentCategoryService
         , private spinner: NgxSpinnerService
+        , private http: HttpClient
+                // , private location: Location
     ) {
     }
 
     displayImport = false;
     selectedFile: File;
 
-    fileChange(event: any) {
+    onFileUpload(event: any) {
         this.selectedFile = event.target.files[0];
         const formData = new FormData();
+        console.log(formData);
         formData.append('file', this.selectedFile, this.selectedFile.name);
+        console.log(formData);
         this.paymentService.importDataAll(formData);
     }
+
 
     async showDisplayImport() {
         this.displayImport = true;
     }
 
     async hideDisplayImport() {
-
         this.displayImport = false;
 
         await this.spinner.show();
-
         setTimeout(() => {
             this.spinner.hide();
         }, 2000);
 
+        window.location.reload();
     }
 
 

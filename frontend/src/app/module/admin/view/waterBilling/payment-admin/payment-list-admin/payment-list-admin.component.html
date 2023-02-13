@@ -268,8 +268,8 @@
         <p-tabView>
             <div class="p-grid " style="margin-left: 45px">
                 <p-fileUpload name="file" url="http://localhost:8036/api/excel/upload"
-                              (onUpload)="fileChange($event)" (onSend)="hideDisplayImport()"
-                              multiple="multiple" accept=".xlsx, .xls" maxFileSize="1000000" #fileUpload>
+                              (onUpload)="onFileUpload($event)" #fileUpload (onSend)="hideDisplayImport()"
+                              multiple="multiple" accept=".xlsx, .xls" maxFileSize="1000000" >
                 </p-fileUpload>
             </div>
 

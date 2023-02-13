@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -60,7 +61,7 @@ public class PaymentImportExcelImpl implements PaymentImportExcelService {
                 Client loadedClient = clientService.findByUserName(clientUserName);
                 Client client = new Client();
                 if (loadedClient == null) {
-                    return;
+                    return ;
                 } else {
                     client.setId(loadedClient.getId());
                     client.setUserName(loadedClient.getUserName());
